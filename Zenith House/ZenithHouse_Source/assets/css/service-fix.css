@@ -1,0 +1,109 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+/* Service Section - Premium Dark Layout */
+.service-inner {
+    background-color: #0c0c0c;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.service-item-2 {
+    background: rgba(255,255,255,0.03) !important;
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 20px;
+    padding: 0 0 25px 0 !important;
+    overflow: hidden;
+    transition: all 0.5s ease;
+}
+
+.service-item-2:hover {
+    transform: translateY(-10px);
+    border-color: rgba(200, 169, 126, 0.5);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.5);
+}
+
+.service-item-2 .service-thumb {
+    margin-bottom: 20px;
+    position: relative;
+}
+
+.service-item-2 .service-thumb img {
+    width: 100%;
+    height: 350px;
+    object-fit: cover;
+    border-radius: 20px 20px 0 0;
+}
+
+.service-item-2.big .service-thumb img {
+    height: 450px;
+}
+
+.service-item-2 .service-thumb .number {
+    position: absolute;
+    bottom: -20px;
+    right: 20px;
+    background: #0c0c0c;
+    color: #C8A97E;
+    font-size: 24px;
+    font-weight: 800;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    border: 1px solid rgba(200, 169, 126, 0.3);
+}
+
+.service-item-2 .service-content {
+    padding: 0 25px;
+}
+
+.service-item-2 .title {
+    font-size: 22px;
+    margin-bottom: 10px;
+    font-family: 'Montserrat', sans-serif !important;
+}
+
+.service-item-2 .title a {
+    color: #ffffff !important;
+    font-weight: 300;
+    transition: color 0.3s ease;
+}
+
+.service-item-2:hover .title a {
+    color: #C8A97E !important;
+}
+
+.service-item-2 p {
+    color: rgba(255,255,255,0.6);
+    font-weight: 300;
+    font-size: 15px;
+    margin: 0;
+    line-height: 1.6;
+}
+
+/* Header Text Adjustments */
+.service-header-title {
+    font-size: 54px;
+    line-height: 1.1;
+    margin-bottom: 50px;
+    font-family: 'Montserrat', sans-serif !important;
+}
+.service-header-title .thin {
+    font-weight: 200;
+    color: #ffffff;
+}
+.service-header-title .bold-gold {
+    font-weight: 800;
+    color: #C8A97E;
+}
+
+.section-title, .sub-heading {
+    font-family: 'Montserrat', sans-serif !important;
+}
+
+/* Page Header Height Fix */
+.page-header {
+    padding: 70px 0 0px 0 !important;
+    background-color: #0c0c0c;
+}

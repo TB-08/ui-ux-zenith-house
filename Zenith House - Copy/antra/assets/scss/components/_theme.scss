@@ -1,0 +1,1307 @@
+@use "../utilities" as *;
+
+/*-----------------------------------------------------------------------------------
+
+    Template Name: Antra - Architecture & Interior Design HTML Template
+    Author: ColorPic
+    Description: Antra - Architecture & Interior Design HTML Template
+    Version: 1.0
+
+-----------------------------------------------------------------------------------
+
+/**----------------------------------------
+START: Template Default CSS
+----------------------------------------*/
+@import url($font-url);
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    overflow-x: hidden;
+    max-width: 100%;
+}
+
+/**
+	Typography CSS
+*/
+body {
+    background-color: #f6f6f6;
+    font-family: var(--tl-ff-body);
+    font-size: 16px;
+    line-height: 1.625;
+    font-weight: 400;
+    color: var(--tl-color-text-body);
+    position: relative;
+    z-index: 1;
+    overflow-x: hidden;
+    max-width: 100%;
+}
+
+img {
+    max-width: 100%;
+}
+
+a {
+    text-decoration: none;
+}
+
+a,
+a:hover {
+    @include transition(all 0.3s ease-in-out);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: var(--tl-ff-heading);
+    color: var(--tl-color-heading-primary);
+    margin-top: 0px;
+    font-weight: 600;
+    line-height: 1.2;
+    @include transition(all 0.3s ease-in-out 0s);
+}
+
+h1 {
+    font-size: var(--tl-fs-h1);
+}
+
+h2 {
+    font-size: var(--tl-fs-h2);
+}
+
+h3 {
+    font-size: var(--tl-fs-h3);
+}
+
+h4 {
+    font-size: var(--tl-fs-h4);
+}
+
+h5 {
+    font-size: var(--tl-fs-h5);
+}
+
+h6 {
+    font-size: var(--tl-fs-h6);
+}
+
+ul {
+    margin: 0px;
+    padding: 0px;
+}
+
+p {
+    font-family: var(--tl-ff-p);
+    font-size: 16px;
+    font-weight: 400;
+    color: var(--tl-color-text-body);
+    margin-bottom: 15px;
+    line-height: 28px;
+}
+
+a:focus,
+.button:focus {
+    text-decoration: none;
+    outline: none;
+}
+
+a:focus,
+a:hover {
+    color: inherit;
+    text-decoration: none;
+}
+
+a:hover {
+    color: var(--tl-color-theme-primary);
+}
+
+a,
+button {
+    color: inherit;
+    outline: none;
+    border: none;
+    background: transparent;
+}
+
+button:hover {
+    cursor: pointer;
+}
+
+button:focus {
+    outline: 0;
+    border: 0;
+}
+
+.uppercase {
+    text-transform: uppercase;
+}
+
+.capitalize {
+    text-transform: capitalize;
+}
+
+input {
+    outline: none;
+}
+
+input[type="color"] {
+    appearance: none;
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    background: none;
+    border: 0;
+    cursor: pointer;
+    height: 100%;
+    width: 100%;
+    padding: 0;
+    border-radius: 50%;
+}
+
+ul {
+    display: block;
+    padding: 0;
+    margin: 0;
+}
+
+*::-moz-selection {
+    // background: var(--tl-color-common-black);
+    color: var(--tl-color-common-white);
+    text-shadow: none;
+}
+
+::-moz-selection {
+    // background: var(--tl-color-common-black);
+    color: var(--tl-color-common-white);
+    text-shadow: none;
+}
+
+::selection {
+    // background: var(--tl-color-common-black);
+    color: var(--tl-color-common-white);
+    text-shadow: none;
+}
+
+*::-moz-placeholder {
+    color: var(--tl-color-common-black);
+    font-size: var(--tl-fs-body);
+    opacity: 1;
+}
+
+*::placeholder {
+    color: var(--tl-color-common-black);
+    font-size: var(--tl-fs-body);
+    opacity: 1;
+}
+
+/**
+    Common Classes CSS
+*/
+
+.container {
+    max-width: 1795px;
+}
+
+.container-2 {
+    max-width: 1425px;
+}
+
+.w-img {
+    & img {
+        width: 100%;
+    }
+}
+
+.m-img {
+    & img {
+        max-width: 100%;
+    }
+}
+
+.fix {
+    overflow: hidden;
+}
+
+.clear {
+    clear: both;
+}
+
+.f-left {
+    float: left;
+}
+
+.f-right {
+    float: right;
+}
+
+.z-index-1 {
+    z-index: 1;
+}
+
+.z-index-11 {
+    z-index: 11;
+}
+
+.overflow-y-visible {
+    overflow-x: hidden;
+    overflow-y: visible;
+}
+
+.p-relative {
+    position: relative;
+}
+
+.p-absolute {
+    position: absolute;
+}
+
+.include-bg {
+    @include background();
+}
+
+.b-radius {
+    border-radius: 6px;
+}
+
+.overflow-x {
+    overflow-x: clip;
+}
+
+// bg color
+.bg-grey {
+    background-color: #eeeeee;
+}
+.tl-bg-color {
+    background-color: #f6f6f6;
+}
+.bg-dark-1 {
+    background-color: var(--tl-color-bg-1);
+}
+.bg-dark-2 {
+    background-color: var(--tl-color-bg-2);
+}
+
+// border-bottom
+.bd-bottom {
+    border-bottom: 1px solid var(--tl-color-border-1);
+}
+
+.bg-color-top {
+    background-color: #171719;
+    width: 100%;
+    height: 400px;
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: -2;
+}
+
+.bg-color-bottom {
+    background-color: #171719;
+    width: 100%;
+    height: 400px;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    z-index: -2;
+}
+
+// Overflow
+
+.overflow-h {
+    overflow: hidden;
+}
+
+// Section Heading
+
+.section-heading-wrap {
+    max-width: 1192px;
+    width: 100%;
+    margin: 0 auto;
+    position: relative;
+    margin-bottom: 60px;
+    padding-top: 65px;
+    @include breakpoint(md) {
+        margin-top: 0;
+        padding-top: 0;
+    }
+    .shape {
+        position: absolute;
+        top: 0px;
+        left: 0;
+        @include breakpoint(lg) {
+            width: 43%;
+        }
+        @include breakpoint(md) {
+            display: none;
+        }
+    }
+}
+
+.section-heading {
+    margin-bottom: 60px;
+    position: relative;
+    z-index: 1;
+    @include flex-vertical-center;
+    align-items: baseline;
+    flex-direction: column;
+    @include breakpoint(md) {
+        margin-bottom: 40px;
+    }
+    .sub-heading {
+        font-family: var(--tl-ff-heading);
+        color: var(--tl-color-heading-primary);
+        font-size: 12px;
+        font-weight: 400;
+        padding: 7px 19px 7px 28px;
+        display: inline-block;
+        margin-bottom: 20px;
+        text-transform: uppercase;
+        position: relative;
+        overflow: hidden;
+        border: 1px solid rgba(114, 114, 114, 0.18);
+        border-radius: 100px;
+        letter-spacing: 1px;
+        @include breakpoint(md) {
+            font-size: 12px;
+        }
+        @include breakpoint(sm) {
+            font-size: 12px;
+        }
+        &:before {
+            background-color: var(--tl-color-theme-primary);
+            content: "";
+            height: 5px;
+            width: 5px;
+            position: absolute;
+            top: 50%;
+            left: 15px;
+            transform: translateY(-50%);
+            border-radius: 50%;
+        }
+    }
+    .section-title {
+        font-size: 80px;
+        line-height: 1.1;
+        font-weight: 400;
+        display: inline-block;
+        margin-bottom: 0;
+        text-transform: capitalize;
+        position: relative;
+        overflow: hidden;
+        span {
+            color: var(--tl-color-theme-primary);
+            @include breakpoint(lg) {
+                br {
+                    display: none;
+                }
+            }
+        }
+        @include breakpoint(lg) {
+            font-size: 60px;
+        }
+        @include breakpoint(md) {
+            font-size: 42px;
+            max-width: 100%;
+            br {
+                display: none;
+            }
+        }
+        @include breakpoint(sm) {
+            font-size: 36px;
+            br {
+                display: none;
+            }
+        }
+        &.title-2 {
+            font-size: 60px;
+            @include breakpoint(lg) {
+                font-size: 50px;
+            }
+            @include breakpoint(md) {
+                font-size: 42px;
+                max-width: 100%;
+                br {
+                    display: none;
+                }
+            }
+            @include breakpoint(sm) {
+                font-size: 36px;
+                br {
+                    display: none;
+                }
+            }
+            span {
+                @include breakpoint(xl) {
+                    br {
+                        display: none;
+                    }
+                }
+            }
+        }
+    }
+    p {
+        margin-top: 20px;
+        @include breakpoint(lg) {
+            br {
+                display: none;
+            }
+        }
+    }
+    &.white-content {
+        .sub-heading {
+            color: var(--tl-color-common-white);
+            border: 1px solid rgba(255, 255, 255, 0.24);
+        }
+        p,
+        .section-title {
+            color: var(--tl-color-common-white);
+        }
+    }
+    &.heading-2 {
+        margin-bottom: 30px;
+        .section-title {
+            margin-bottom: 25px;
+            @include breakpoint(lg) {
+                margin: 0;
+                margin-bottom: 25px;
+            }
+        }
+    }
+    &.section-heading-2 {
+        padding-left: 20px;
+        @include breakpoint(md) {
+            padding-left: 0;
+        }
+        .section-title {
+            @include breakpoint(xl) {
+                br {
+                    display: none;
+                }
+            }
+        }
+    }
+}
+
+.heading-space {
+    @include flex-vertical-center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    row-gap: 25px;
+    margin-bottom: 60px;
+    @include breakpoint(md) {
+        margin-bottom: 40px;
+    }
+}
+
+.t-up {
+    text-transform: uppercase;
+}
+
+.white-content {
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6,
+    p,
+    li,
+    span {
+        color: var(--tl-color-common-white);
+    }
+}
+
+// Img Animation
+
+.img-reveal {
+    position: relative;
+    overflow: hidden;
+    visibility: hidden;
+    z-index: 1;
+    .img-overlay {
+        background-color: var(--tl-color-common-white);
+        height: 100%;
+        width: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 2;
+    }
+    img {
+        object-fit: cover;
+        height: 100%;
+        width: 100%;
+    }
+}
+
+// Text Animation
+
+.anim-text {
+    overflow: hidden;
+}
+
+// Running Text
+
+.running-text {
+    background-color: transparent;
+    background-repeat: repeat;
+    background-size: 20px;
+    padding: 14px 0;
+    overflow: hidden;
+    ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        gap: 95px;
+        li {
+            font-family: var(--tl-ff-heading);
+            display: inline-block;
+            white-space: nowrap;
+            font-size: 240px;
+            color: var(--tl-color-common-white);
+            text-transform: uppercase;
+            font-weight: 500;
+            position: relative;
+            line-height: 1;
+            @include breakpoint(md) {
+                font-size: 140px;
+            }
+            @include breakpoint(sm) {
+                font-size: 48px;
+            }
+        }
+        @include breakpoint(sm) {
+            gap: 24px;
+        }
+    }
+}
+
+/**----------------------------------------
+    START: Preloader CSS
+----------------------------------------*/
+
+.preloader span {
+    font-family: var(--tl-ff-heading);
+    font-size: 80px;
+    font-weight: 800;
+    color: #fff;
+    text-transform: uppercase;
+    overflow-x: hidden;
+}
+
+.site-name {
+    background-color: #111;
+}
+
+.preloader-gutters {
+    background-color: transparent;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+    display: flex;
+}
+
+.preloader-overlay {
+    background-color: #111;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 3;
+    transform: translateX(-100%);
+    opacity: 0.2;
+}
+
+.preloader {
+    width: 100%;
+    height: 100vh;
+    position: relative;
+    --preloader-clip: 0;
+    clip-path: inset(0 0 0 var(--preloader-clip));
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 999;
+}
+
+.site-name {
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    align-content: center;
+    position: absolute;
+    top: 0;
+    z-index: 1;
+    left: 0;
+    span {
+        @include breakpoint(sm) {
+            font-size: 40px;
+        }
+    }
+}
+
+.preloader-gutters .bar {
+    width: 12.5%;
+    height: 100%;
+    background: transparent;
+    position: relative;
+}
+
+.preloader-gutters .inner-bar {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0%;
+    height: 100%;
+    background-color: var(--tl-color-common-white);
+}
+
+@keyframes loading {
+    0% {
+        width: 0;
+    }
+    100% {
+        width: 100%;
+    }
+}
+
+/*  Custom Cursor */
+
+@media (min-width: 992px) {
+    .mt-cursor {
+        --tl-cursor-size: 10px;
+        --tl-cx: 0px;
+        --tl-cy: 0px;
+        --tl-cursor-bg: var(--tl-color-theme-primary);
+        --tl-cursor-scale: 1;
+        display: block;
+        width: var(--tl-cursor-size);
+        height: var(--tl-cursor-size);
+        border-radius: 50%;
+        position: fixed;
+        user-select: none;
+        pointer-events: none;
+        visibility: hidden;
+        z-index: 10000;
+        transform: translate3d(var(--tl-cx), var(--tl-cy), 0) translate(-50%, -50%) scale(var(--tl-cursor-scale, 1));
+        transform-origin: center center;
+        will-change: transform, opacity;
+        mix-blend-mode: normal;
+        -webkit-transition:
+            opacity 0.3s cubic-bezier(0.165, 0.84, 0.44, 1),
+            transform 0.2s ease-out;
+        transition:
+            opacity 0.3s cubic-bezier(0.165, 0.84, 0.44, 1),
+            transform 0.2s ease-out;
+    }
+
+    .mt-cursor:before {
+        background: var(--tl-cursor-bg, var(--tl-color-theme-primary));
+        opacity: 1;
+        content: "";
+        width: 100%;
+        height: 100%;
+        border-radius: 50%;
+        position: absolute;
+        left: 0;
+        top: 0;
+        transition: all 0.3s ease;
+    }
+    .mt-cursor.cursor-blend {
+        mix-blend-mode: difference;
+        --tl-cursor-bg: #fff;
+    }
+    .mt-cursor.cursor-dark {
+        background-color: var(--tl-color-common-white);
+        mix-blend-mode: exclusion;
+    }
+    .mt-cursor.cursor-lg {
+        --tl-cursor-scale: 7;
+    }
+
+    .mt-cursor-view {
+        --tl-view-cursor-size: 80px;
+        --tl-vx: 0px;
+        --tl-vy: 0px;
+        --tl-view-scale: 0.7;
+        background: rgba(0, 0, 0, 0.46);
+        opacity: 0.99;
+        border: 1px solid rgba(255, 255, 255, 0.07);
+        backdrop-filter: blur(29px);
+        border-radius: 100px;
+        display: block;
+        width: var(--tl-view-cursor-size);
+        height: var(--tl-view-cursor-size);
+        border-radius: 50%;
+        position: fixed;
+        user-select: none;
+        pointer-events: none;
+        visibility: visible;
+        z-index: 10000;
+        transform: translate3d(var(--tl-vx), var(--tl-vy), 0) translate(-40px, -40px) scale(var(--tl-view-scale, 0));
+        transform-origin: center center;
+        will-change: transform, opacity;
+        -webkit-transition:
+            opacity 0.3s cubic-bezier(0.165, 0.84, 0.44, 1),
+            transform 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
+        transition:
+            opacity 0.3s cubic-bezier(0.165, 0.84, 0.44, 1),
+            transform 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
+        opacity: 0;
+    }
+
+    .mt-cursor-view:after {
+        content: "View";
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        color: #fff;
+        font-weight: bold;
+        font-size: 12px;
+        opacity: 0;
+        transition: opacity 0.2s ease;
+    }
+
+    .mt-cursor-view.active {
+        --tl-view-scale: 1;
+        opacity: 1;
+    }
+
+    .mt-cursor-view.active:after {
+        opacity: 1;
+    }
+}
+
+.sticky-widget {
+    position: -webkit-sticky;
+    position: sticky;
+    top: 170px;
+}
+
+@include breakpoint(sm) {
+    br {
+        display: none;
+    }
+}
+
+// Spacing Classes
+
+/*-- Margin Top --*/
+
+@for $i from 1 through 40 {
+    .mt-#{5 * $i} {
+        margin-top: 5px * $i;
+    }
+}
+
+/*-- Margin Bottom --*/
+
+@for $i from 1 through 40 {
+    .mb-#{5 * $i} {
+        margin-bottom: 5px * $i;
+    }
+}
+
+/*-- Margin Left --*/
+
+@for $i from 1 through 40 {
+    .ml-#{5 * $i} {
+        margin-left: 5px * $i;
+    }
+}
+
+/*-- Margin Right --*/
+
+@for $i from 1 through 40 {
+    .mr-#{5 * $i} {
+        margin-right: 5px * $i;
+    }
+}
+
+/*-- Padding Top --*/
+
+@for $i from 1 through 40 {
+    .pt-#{5 * $i} {
+        padding-top: 5px * $i;
+    }
+}
+
+/*-- Padding Bottom --*/
+
+@for $i from 1 through 40 {
+    .pb-#{5 * $i} {
+        padding-bottom: 5px * $i;
+    }
+}
+
+/*-- Padding Left --*/
+
+@for $i from 1 through 40 {
+    .pl-#{5 * $i} {
+        padding-left: 5px * $i;
+    }
+}
+
+/*-- Padding Right --*/
+
+@for $i from 1 through 40 {
+    .pr-#{5 * $i} {
+        padding-right: 5px * $i;
+    }
+}
+
+// Margin Class
+
+.mt-10 {
+    margin-top: 10px;
+}
+
+.mt-15 {
+    margin-top: 15px;
+}
+
+.mt-20 {
+    margin-top: 20px;
+}
+
+.mt-25 {
+    margin-top: 25px;
+}
+
+.mt-30 {
+    margin-top: 30px;
+}
+
+.mt-35 {
+    margin-top: 35px;
+}
+
+.mt-40 {
+    margin-top: 40px;
+}
+
+.mt-45 {
+    margin-top: 45px;
+}
+
+.mt-50 {
+    margin-top: 50px;
+}
+
+.mb-10 {
+    margin-bottom: 10px;
+}
+
+.mb-15 {
+    margin-bottom: 15px;
+}
+
+.mb-20 {
+    margin-bottom: 20px;
+}
+
+.mb-25 {
+    margin-bottom: 25px;
+}
+
+.mb-30 {
+    margin-bottom: 30px;
+}
+
+.mb-35 {
+    margin-bottom: 35px;
+}
+
+.mb-40 {
+    margin-bottom: 40px;
+}
+
+.mb-45 {
+    margin-bottom: 45px;
+}
+
+.mb-50 {
+    margin-bottom: 50px;
+}
+
+.mb-60 {
+    margin-bottom: 60px;
+}
+
+// Padding Class
+
+.pt-180 {
+    padding-top: 180px;
+    @include breakpoint(md) {
+        padding-top: 70px;
+    }
+    @include breakpoint(sm) {
+        padding-top: 50px;
+    }
+}
+
+.pt-150 {
+    padding-top: 150px;
+    @include breakpoint(md) {
+        padding-top: 80px;
+    }
+    @include breakpoint(sm) {
+        padding-top: 70px;
+    }
+}
+
+.pt-140 {
+    padding-top: 140px;
+    @include breakpoint(md) {
+        padding-top: 80px;
+    }
+    @include breakpoint(sm) {
+        padding-top: 70px;
+    }
+}
+
+.pt-130 {
+    padding-top: 130px;
+    @include breakpoint(md) {
+        padding-top: 80px;
+    }
+    @include breakpoint(sm) {
+        padding-top: 60px;
+    }
+}
+
+.pt-120 {
+    padding-top: 120px;
+    @include breakpoint(md) {
+        padding-top: 70px;
+    }
+    @include breakpoint(sm) {
+        padding-top: 60px;
+    }
+}
+
+.pt-90 {
+    padding-top: 90px;
+    @include breakpoint(md) {
+        padding-top: 70px;
+    }
+    @include breakpoint(sm) {
+        padding-top: 60px;
+    }
+}
+
+.pt-80 {
+    padding-top: 80px;
+    @include breakpoint(md) {
+        padding-top: 70px;
+    }
+    @include breakpoint(sm) {
+        padding-top: 60px;
+    }
+}
+
+.pt-70 {
+    padding-top: 70px;
+    @include breakpoint(md) {
+        padding-top: 70px;
+    }
+    @include breakpoint(sm) {
+        padding-top: 60px;
+    }
+}
+
+.pb-180 {
+    padding-bottom: 180px;
+    @include breakpoint(md) {
+        padding-bottom: 70px;
+    }
+    @include breakpoint(sm) {
+        padding-bottom: 60px;
+    }
+}
+
+.pb-150 {
+    padding-bottom: 150px;
+    @include breakpoint(md) {
+        padding-bottom: 80px;
+    }
+    @include breakpoint(sm) {
+        padding-bottom: 70px;
+    }
+}
+
+.pb-140 {
+    padding-bottom: 140px;
+    @include breakpoint(md) {
+        padding-bottom: 80px;
+    }
+    @include breakpoint(sm) {
+        padding-bottom: 70px;
+    }
+}
+
+.pb-130 {
+    padding-bottom: 130px;
+    @include breakpoint(md) {
+        padding-bottom: 80px;
+    }
+    @include breakpoint(sm) {
+        padding-bottom: 60px;
+    }
+}
+
+.pb-120 {
+    padding-bottom: 120px;
+    @include breakpoint(md) {
+        padding-bottom: 70px;
+    }
+    @include breakpoint(sm) {
+        padding-bottom: 60px;
+    }
+}
+
+.pb-110 {
+    padding-bottom: 110px;
+    @include breakpoint(md) {
+        padding-bottom: 70px;
+    }
+    @include breakpoint(sm) {
+        padding-bottom: 60px;
+    }
+}
+
+.pb-90 {
+    padding-bottom: 90px;
+    @include breakpoint(md) {
+        padding-bottom: 70px;
+    }
+    @include breakpoint(sm) {
+        padding-bottom: 60px;
+    }
+}
+
+.pb-80 {
+    padding-bottom: 80px;
+    @include breakpoint(md) {
+        padding-bottom: 70px;
+    }
+    @include breakpoint(sm) {
+        padding-bottom: 60px;
+    }
+}
+
+.pb-70 {
+    padding-bottom: 70px;
+    @include breakpoint(md) {
+        padding-bottom: 70px;
+    }
+    @include breakpoint(sm) {
+        padding-bottom: 60px;
+    }
+}
+
+.md-pb-30 {
+    @include breakpoint(md) {
+        padding-bottom: 30px;
+    }
+}
+.md-pb-40 {
+    @include breakpoint(md) {
+        padding-bottom: 40px;
+    }
+}
+.md-pb-50 {
+    @include breakpoint(md) {
+        padding-bottom: 50px;
+    }
+}
+
+.md-mb-30 {
+    @include breakpoint(md) {
+        margin-bottom: 30px;
+    }
+}
+.md-mb-40 {
+    @include breakpoint(md) {
+        margin-bottom: 40px;
+    }
+}
+.md-mb-50 {
+    @include breakpoint(md) {
+        margin-bottom: 50px;
+    }
+}
+
+.pl-0 {
+    padding-left: 0 !important;
+}
+
+.ml-0 {
+    margin-left: 0 !important;
+}
+
+.mw-100 {
+    max-width: 100% !important;
+}
+
+/* Scroll To Top */
+#scroll-percentage {
+    position: absolute;
+}
+
+#scroll-percentage {
+    height: 60px;
+    width: 60px;
+    background-color: var(--tl-color-theme-primary);
+    border-radius: 50%;
+    position: fixed;
+    bottom: 40px;
+    right: 50px;
+    transform: scale(0);
+    display: grid;
+    place-items: center;
+    cursor: pointer;
+    visibility: hidden;
+    opacity: 0;
+    -webkit-transition: all 0.3s;
+    transition: all 0.3s;
+    z-index: 100;
+    box-shadow: 0px 11px 41px 3px rgba(23, 67, 63, 0.12);
+    @include breakpoint(md) {
+        right: 30px;
+    }
+    @include breakpoint(sm) {
+        bottom: 20px;
+        right: 20px;
+    }
+}
+
+#scroll-percentage.active {
+    bottom: 50px;
+    transform: scale(1);
+    opacity: 1;
+    visibility: visible;
+    -webkit-animation: 500ms ease-in-out 0s normal none 1 running scrollToTop;
+    animation: 500ms ease-in-out 0s normal none 1 running scrollToTop;
+    -webkit-transition: 0.3s;
+    transition: 0.3s;
+    @include breakpoint(md) {
+        bottom: 30px;
+    }
+    @include breakpoint(sm) {
+        bottom: 20px;
+    }
+}
+
+#scroll-percentage-value {
+    height: calc(100% - 6px);
+    width: calc(100% - 6px);
+    background-color: var(--tl-color-common-white);
+    color: var(--tl-color-theme-primary);
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+#scroll-percentage-value i {
+    font-size: 20px;
+}
+
+@-webkit-keyframes scrollToTop {
+    0% {
+        -webkit-transform: translate3d(0, 80%, 0);
+        transform: translate3d(0, 80%, 0);
+        visibility: visible;
+    }
+
+    to {
+        -webkit-transform: translateZ(0);
+        transform: translateZ(0);
+    }
+}
+
+@keyframes scrollToTop {
+    0% {
+        -webkit-transform: translate3d(0, 80%, 0);
+        transform: translate3d(0, 80%, 0);
+        visibility: visible;
+    }
+
+    to {
+        -webkit-transform: translateZ(0);
+        transform: translateZ(0);
+    }
+}
+
+// Animation
+
+@-webkit-keyframes wobble-vertical {
+    16.65% {
+        transform: translateY(8px);
+    }
+    33.3% {
+        transform: translateY(-6px);
+    }
+    49.95% {
+        transform: translateY(4px);
+    }
+    66.6% {
+        transform: translateY(-2px);
+    }
+    83.25% {
+        transform: translateY(1px);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
+@keyframes wobble-vertical {
+    16.65% {
+        transform: translateY(8px);
+    }
+    33.3% {
+        transform: translateY(-6px);
+    }
+    49.95% {
+        transform: translateY(4px);
+    }
+    66.6% {
+        transform: translateY(-2px);
+    }
+    83.25% {
+        transform: translateY(1px);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
+// Image Comparison
+.antra-image-comparison {
+    width: 100%;
+    height: 550px;
+    border-radius: 24px;
+    overflow: hidden;
+    img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center;
+    }
+}

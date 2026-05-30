@@ -1,0 +1,125 @@
+/* Optimized Sidebar - Zenith House Premium */
+#sidebar-area.sidebar-area {
+    width: 480px;
+    background: #0a0a0a;
+    padding: 60px 50px;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    overflow-y: auto;
+    scrollbar-width: none;
+    z-index: 1000;
+}
+#sidebar-area::-webkit-scrollbar { display: none; }
+
+.side-menu-content {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 30px;
+}
+
+.side-menu-logo { margin-bottom: 10px; }
+.side-menu-logo img { height: 40px; }
+
+.side-menu-about .title {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 26px;
+    font-weight: 200;
+    line-height: 1.4;
+    color: #ffffff;
+    margin: 0;
+    letter-spacing: 1px;
+}
+
+.side-menu-gallary {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+    margin: 10px 0;
+}
+
+.side-menu-gallary-item {
+    overflow: hidden;
+    border-radius: 10px;
+    aspect-ratio: 1/1;
+}
+
+.side-menu-gallary-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+    filter: brightness(0.8);
+}
+
+.side-menu-gallary-item:hover img {
+    transform: scale(1.1);
+    filter: brightness(1);
+}
+
+.side-menu-contact {
+    border-top: 1px solid rgba(200, 169, 126, 0.2);
+    padding-top: 30px;
+}
+
+.side-menu-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.side-menu-list li {
+    color: rgba(255,255,255,0.7);
+    font-size: 14px;
+    line-height: 1.8;
+    margin-bottom: 15px;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.side-menu-list li a {
+    color: #C8A97E;
+    text-decoration: none;
+    font-weight: 500;
+    transition: 0.3s;
+}
+
+.side-menu-list li a:hover { color: #fff; }
+
+.side-menu-social {
+    display: flex;
+    gap: 20px;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.side-menu-social li a {
+    color: rgba(255,255,255,0.5);
+    font-size: 16px;
+    transition: 0.3s;
+}
+
+.side-menu-social li a:hover {
+    color: #C8A97E;
+    transform: translateY(-3px);
+    display: inline-block;
+}
+
+.sidebar-trigger.close {
+    top: 40px;
+    right: 40px;
+    background: rgba(200, 169, 126, 0.1);
+    border-radius: 50%;
+    width: 45px;
+    height: 45px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: 0.3s;
+}
+.sidebar-trigger.close:hover {
+    background: #C8A97E;
+}
+.sidebar-trigger.close svg { fill: #fff; }

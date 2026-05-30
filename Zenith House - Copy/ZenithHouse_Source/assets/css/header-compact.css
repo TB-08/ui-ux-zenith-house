@@ -1,0 +1,69 @@
+/* ============================================================
+   ZENITH HOUSE — Global Header Compact Override
+   Applies sitewide: compact bar, small logo, visible hotline
+   ============================================================ */
+
+/* ── Keep the header thin ───────────────────────────────────── */
+.header .primary-header-inner {
+    padding: 4px 0 !important;
+}
+
+/* ── Smallest logo to keep header slim ──────────────────────── */
+.header .primary-header-inner .header-logo img {
+    max-width: 80px !important;
+    height: auto !important;
+}
+
+/* ── Restore original menu link spacing ─────────────────────── */
+.header .primary-header-inner .header-menu-wrap ul li a {
+    padding: 12px 0 !important;
+}
+
+/* ── Always show the hotline contact block ──────────────────── */
+.header .primary-header-inner .header-right-wrap .header-contact {
+    display: flex !important;
+}
+
+/* ── Sticky header stays compact too ───────────────────────── */
+.primary-header.fixed .primary-header-inner {
+    padding: 4px 0 !important;
+}
+
+/* ── Hero & Page Header Centering ─────────────────────────── */
+.page-header,
+.urban-hero, 
+.villa-hero-editorial,
+.service-detail-hero {
+    min-height: 100vh !important;
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: center !important;
+    padding-top: 130px !important; /* Safe offset for sticky menu */
+    padding-bottom: 40px !important;
+    box-sizing: border-box !important;
+}
+
+/* Only center content for these specific classes */
+.page-header-content,
+.hero-content-luxury,
+.service-detail-hero .hero-content {
+    margin: 0 auto !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    text-align: center !important;
+    width: 100% !important;
+}
+
+.page-header-content *:last-child,
+.hero-content-luxury *:last-child,
+.hero-content *:last-child {
+    margin-bottom: 0 !important;
+}
+
+/* ── Responsive: hide hotline below 1100px ─────────────────── */
+@media (max-width: 1100px) {
+    .header .primary-header-inner .header-right-wrap .header-contact {
+        display: none !important;
+    }
+}

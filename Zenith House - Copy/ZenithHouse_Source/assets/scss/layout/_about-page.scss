@@ -1,0 +1,191 @@
+@use "../utilities" as *;
+
+/**----------------------------------------
+    START: Page Header CSS
+----------------------------------------*/
+
+.history-section{
+    padding-bottom: 425px;
+    position: relative;
+    z-index: 2;
+    overflow-x: clip;
+    @include breakpoint(sm){
+        padding-bottom: 100px;
+    }
+    .history-text{
+        font-family: var(--tl-ff-heading);
+        font-size: 420px;
+        font-weight: 400;
+        line-height: 1;
+        color: #9F9FA4;
+        opacity: 0.13;
+        margin-bottom: 0;
+        position: absolute;
+        bottom: -62px;
+        left: 77px;
+        z-index: -1;
+        @include breakpoint(sm){
+            display: none;
+        }
+    }
+    .history-element{
+        position: absolute;
+        bottom: -20%;
+        right: 77px;
+        @include breakpoint(lg){
+            bottom: -26%;
+        }
+        @include breakpoint(md){
+            bottom: -8%;
+        }
+    }
+}
+
+.history-carousel-wrap{
+    clip-path: inset(-100% -100% -100% 0);
+    overflow: visible;
+    position: relative;
+    &:before{
+        background-color: #9F9FA4;
+        content: "";
+        width: 3000px;
+        height: 1px;
+        position: absolute;
+        top: 54.6%;
+        left: -175px;
+        z-index: -1;
+        opacity: 0.24;
+    }
+}
+
+.history-carousel{
+    overflow: visible;
+}
+
+.history-item{
+    .history-img{
+        height: 160px;
+        width: 160px;
+        img{
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 24px;
+        }
+    }
+    .history-content{
+        .circle{
+            background-color: var(--tl-color-theme-primary);
+            display: block;
+            height: 18px;
+            width: 18px;
+            border-radius: 50%;
+            margin: 40px 0 30px 0;
+        }
+        .title{
+            font-size: 30px;
+            font-weight: 400;
+            line-height: 1;
+            margin-bottom: 20px;
+        }
+        p{
+            margin-bottom: 0;
+            max-width: 311px;
+            width: 100%;
+            font-size: 16px;
+            font-weight: 500;
+        }
+    }
+}
+
+
+// Gallary CSS
+
+.gallary-section-2{
+    position: relative;
+    z-index: 1;
+    .bg-img{
+        @include background;
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: -1;
+        &:before{
+            background-color: var(--tl-color-common-black);
+            content: "";
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: -1;
+            opacity: 0.46;
+        }
+    }
+}
+
+.gallary-carousel-wrap{
+    clip-path: inset(-100% -100% -100% 0);
+    overflow: visible;
+    .swiper-arrow{
+        @include flex-vertical-center;
+        column-gap: 10px;
+        margin-top: 40px;
+        .swiper-nav{
+            background-color: var(--tl-color-theme-primary);
+            color: var(--tl-color-common-white);
+            @include flex-center;
+            height: 50px;
+            width: 50px;
+            border-radius: 50%;
+            @include transition(all 0.3s ease-in-out);
+            border: 1px solid var(--tl-color-theme-primary);
+            i{
+                @include transition(all 0.3s ease-in-out);
+            }
+            &:hover{
+                background-color: rgba(216, 218, 223, 0.13);
+                border: 1px solid rgba(255, 255, 255, 0.09);
+            }
+            &.swiper-prev{
+                &:hover{
+                    i{
+                        transform: rotate(45deg);
+                    }
+                }
+            }
+            &.swiper-next{
+                &:hover{
+                    i{
+                        transform: rotate(-45deg);
+                    }
+                }
+            }
+        }
+    }
+}
+
+.gallary-carousel{
+    overflow: visible;
+}
+
+.gallary-inner-item{
+    a{
+        height: 360px;
+        display: block;
+        img{
+            width: 100%;
+            height: 100%;
+            border-radius: 24px;
+        }
+    }
+}
+
+
+.sponsor-text-wrap-2 .sponsor-text{
+    background-color: var(--tl-color-common-white);
+}
+
+/* !END: About Page CSS */

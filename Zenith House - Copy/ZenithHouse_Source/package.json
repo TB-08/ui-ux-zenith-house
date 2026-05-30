@@ -1,0 +1,15 @@
+{
+  "name": "antra",
+  "version": "1.0.0",
+  "description": "HTML Template Build System",
+  "scripts": {
+    "sass": "sass --watch assets/scss/main.scss:assets/css/main.css --style=compressed",
+    "serve": "browser-sync start --server \"./\" --files \"**/*.html\" \"assets/css/*.css\" \"assets/js/*.js\"",
+    "start": "concurrently \"npm run sass\" \"npm run serve\""
+  },
+  "devDependencies": {
+    "sass": "^1.94.0",
+    "browser-sync": "^2.29.3",
+    "concurrently": "^8.2.2"
+  }
+}

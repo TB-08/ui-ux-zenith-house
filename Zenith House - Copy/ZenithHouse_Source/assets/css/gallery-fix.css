@@ -1,0 +1,123 @@
+
+/* Gallery Section Redesign - Zenith House Architectural Premium */
+.gallary-section-2 {
+    padding: 130px 0;
+    position: relative;
+    background-color: #1a1a1a; /* Nền tối sang trọng */
+    overflow: hidden;
+}
+
+/* Dark architectural background overlay */
+.gallary-section-2 .bg-img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    opacity: 0.3; /* Mờ ảo phía sau */
+    filter: grayscale(100%);
+    z-index: 0;
+}
+
+.gallary-section-2::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to right, rgba(26,26,26,1) 0%, rgba(26,26,26,0.7) 50%, rgba(26,26,26,1) 100%);
+    z-index: 1;
+}
+
+.gallary-section-2 .container {
+    position: relative;
+    z-index: 2;
+}
+
+/* Heading Synchronization - Mixed Case (Like CTA) */
+.gallary-section-2 .section-title {
+    font-family: inherit;
+    font-size: 82px; 
+    font-weight: 300; 
+    line-height: 1.1;
+    color: #ffffff;
+    margin-bottom: 30px;
+    letter-spacing: 1px;
+}
+
+.gallary-section-2 .section-title span {
+    color: var(--tl-color-theme-primary, #C8A97E) !important;
+    font-size: 96px; 
+    font-weight: 800;
+    display: block;
+    letter-spacing: -3px;
+    margin-top: 5px;
+}
+
+.gallary-section-2 p {
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 18px;
+    line-height: 1.6;
+    margin-bottom: 40px;
+    max-width: 500px;
+}
+
+/* Carousel Item Polish */
+.gallary-inner-item {
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 30px 60px rgba(0,0,0,0.4);
+    transition: all 0.5s ease;
+    border: 1px solid rgba(255,255,255,0.05);
+}
+
+.gallary-inner-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 1s ease;
+}
+
+.gallary-inner-item:hover img {
+    transform: scale(1.1);
+}
+
+/* Navigation Buttons */
+.gallary-carousel-wrap .swiper-arrow {
+    display: flex;
+    gap: 20px;
+    margin-top: 40px;
+}
+
+.gallary-carousel-wrap .swiper-nav {
+    width: 55px;
+    height: 55px;
+    border-radius: 50%;
+    border: 1px solid rgba(255,255,255,0.2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #ffffff;
+    cursor: pointer;
+    transition: all 0.4s ease;
+    background: rgba(255,255,255,0.05);
+    backdrop-filter: blur(10px);
+}
+
+.gallary-carousel-wrap .swiper-nav:hover {
+    background: var(--tl-color-theme-primary, #C8A97E);
+    border-color: var(--tl-color-theme-primary, #C8A97E);
+}
+
+.gallary-carousel-wrap .swiper-nav i {
+    font-size: 20px;
+}
+
+@media (max-width: 991px) {
+    .gallary-section-2 .section-title { font-size: 48px; }
+    .gallary-section-2 .section-title span { font-size: 54px; }
+    .gallary-section-2 p { font-size: 16px; }
+}

@@ -1,0 +1,33 @@
+/* Prevent white flash on page load for Dark Luxury theme */
+html, body {
+    background-color: #0a0a0a !important;
+}
+
+/* Ensure smooth content is ready even if JS is slightly delayed */
+#zenith-smooth-wrapper {
+    background-color: #0a0a0a;
+    min-height: 100vh;
+}
+
+/* Force slider visibility to prevent initial blank screen */
+.slider-section {
+    opacity: 1 !important;
+    visibility: visible !important;
+}
+
+/* If preloader was removed, we must ensure these are visible */
+[data-animation] {
+    opacity: 1 !important;
+}
+
+/* Ensure header is visible */
+.header {
+    z-index: 1000;
+}
+
+/* Fix for cases where slider-ready is not applied quickly enough */
+.slider-section:not(.slider-ready) {
+    opacity: 1 !important;
+    visibility: visible !important;
+}
+

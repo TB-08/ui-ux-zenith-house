@@ -1,0 +1,194 @@
+/* Service Detail Luxury - 100vh Optimized */
+.service-detail-hero, 
+.philosophy-section, 
+.process-luxury, 
+.showcase-grid {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 80px 0 !important;
+    position: relative;
+    overflow: hidden;
+}
+
+.service-detail-hero {
+    background-color: #000;
+}
+
+.service-detail-hero .hero-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.5;
+    filter: brightness(0.6);
+}
+
+.service-detail-hero .hero-content {
+    position: relative;
+    z-index: 5;
+    text-align: center;
+}
+
+.service-detail-hero .hero-content h1 {
+    font-size: clamp(40px, 8vw, 100px);
+    font-weight: 200;
+    letter-spacing: 15px;
+    text-transform: uppercase;
+    color: #fff;
+    margin-bottom: 20px;
+    line-height: 1;
+}
+
+.service-detail-hero .hero-content h1 span {
+    font-weight: 800;
+    color: #C8A97E;
+}
+
+/* Philosophy Section */
+.philosophy-section {
+    background: #080808;
+}
+
+.philosophy-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.2fr;
+    gap: 60px;
+    align-items: center;
+}
+
+.philosophy-img img {
+    width: 100%;
+    border-radius: 20px;
+    box-shadow: 0 30px 60px rgba(0,0,0,0.5);
+}
+
+.philosophy-text h2 {
+    font-size: clamp(32px, 4vw, 54px);
+    font-weight: 300;
+    line-height: 1.1;
+    margin-bottom: 30px;
+}
+
+.philosophy-text h2 span {
+    color: #C8A97E;
+    font-weight: 800;
+}
+
+.philosophy-text p {
+    font-size: 16px;
+    line-height: 1.7;
+    color: rgba(255, 255, 255, 0.6);
+    margin-bottom: 20px;
+}
+
+/* Process Section */
+.process-luxury {
+    background: #000000;
+}
+
+.process-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    width: 100%;
+}
+
+.process-card {
+    background: #0a0a0a;
+    padding: 40px 30px;
+    border-radius: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    transition: all 0.5s ease;
+    text-align: center;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.process-card:hover {
+    background: #111;
+    border-color: #C8A97E;
+    transform: translateY(-10px);
+}
+
+.process-card .step {
+    font-size: 10px;
+    color: #C8A97E;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    margin-bottom: 20px;
+    display: block;
+}
+
+.process-card h3 {
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 15px;
+}
+
+.process-card p {
+    font-size: 13px;
+    color: rgba(255, 255, 255, 0.4);
+    line-height: 1.5;
+    margin: 0;
+}
+
+/* Showcase Grid */
+.showcase-grid {
+    background: #080808;
+}
+
+.masonry-showcase {
+    columns: 3;
+    column-gap: 20px;
+    width: 100%;
+}
+
+.showcase-item {
+    break-inside: avoid;
+    margin-bottom: 20px;
+    border-radius: 15px;
+    overflow: hidden;
+    position: relative;
+}
+
+.showcase-item img {
+    width: 100%;
+    transition: transform 0.8s ease;
+    display: block;
+}
+
+.showcase-item:hover img {
+    transform: scale(1.05);
+}
+
+@media (max-width: 991px) {
+    .service-detail-hero, .philosophy-section, .process-luxury, .showcase-grid {
+        min-height: auto;
+        padding: 80px 0 !important;
+    }
+    .philosophy-grid, .process-grid {
+        grid-template-columns: 1fr;
+    }
+    .process-grid {
+        gap: 20px;
+    }
+    .masonry-showcase {
+        columns: 2;
+    }
+}
+
+@media (max-width: 767px) {
+    .masonry-showcase {
+        columns: 1;
+    }
+    .service-detail-hero .hero-content h1 {
+        font-size: 40px;
+        letter-spacing: 5px;
+    }
+}

@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Kiến thức xây nhà chuyên sâu từ Zenith House">
+
+    <!-- Site Title -->
+    <title>Zenith House - Kiến Thức Xây Nhà</title>
+
+    <!-- Place favicon.ico in the root directory -->
+    <link rel="shortcut icon" type="image/x-icon" href="assets/img/favicon.png">
+
+    <!-- CSS here -->
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/fontawesome.min.css">
+    <link rel="stylesheet" href="assets/css/venobox.min.css">
+    <link rel="stylesheet" href="assets/css/odometer.min.css">
+    <link rel="stylesheet" href="assets/css/nice-select.css">
+    <link rel="stylesheet" href="assets/css/carouselTicker.css">
+    <link rel="stylesheet" href="assets/css/animation.css">
+    <link rel="stylesheet" href="assets/css/swiper.min.css">
+    <link rel="stylesheet" href="assets/css/main.css">
+    <link rel="stylesheet" href="assets/css/header-compact.css">
+    <link rel="stylesheet" href="assets/css/nav-dropdown.css">
+    <link rel="stylesheet" href="assets/css/sidebar-premium.css">
+    <link rel="stylesheet" href="assets/css/blog-fix.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --gold: #C8A97E;
+            --dark: #0a0a0a;
+            --glass: rgba(255, 255, 255, 0.04);
+            --border: rgba(200, 169, 126, 0.18);
+        }
+
+        body { background: var(--dark); color: #fff; font-family: 'Montserrat', sans-serif; }
+
+        /* ── Hero ───────────────────────────────────── */
+        .knowledge-hero {
+            min-height: 80vh;
+            display: flex;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+            background-attachment: fixed;
+            background-size: cover;
+            background-position: center;
+        }
+        .knowledge-hero::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(180deg, rgba(10,10,10,0.45) 0%, rgba(10,10,10,0.82) 100%);
+            z-index: 1;
+        }
+        .hero-content { position: relative; z-index: 2; text-align: center; }
+        .hero-label { color: var(--gold); letter-spacing: 10px; text-transform: uppercase; font-size: 13px; margin-bottom: 28px; display: block; font-weight: 600; width: 100%; text-align: center; }
+        .hero-title { font-size: clamp(42px, 8vw, 100px); font-weight: 200; letter-spacing: 12px; margin-bottom: 28px; text-shadow: 0 8px 28px rgba(0,0,0,0.7); line-height: 1.15; color: #fff; }
+        .hero-title span { color: var(--gold); font-weight: 500; }
+
+        /* ── Category Cards ─────────────────────────── */
+        .category-section { padding: 120px 0; position: relative; z-index: 2; margin-top: -100px; }
+        .category-card {
+            background: rgba(14,14,14,0.7);
+            border: 1px solid var(--border);
+            padding: 50px 38px;
+            border-radius: 28px;
+            height: 100%;
+            transition: 0.45s;
+            backdrop-filter: blur(20px);
+        }
+        .category-card:hover { transform: translateY(-14px); border-color: var(--gold); background: rgba(200,169,126,0.08); }
+        .category-card .icon { font-size: 44px; color: var(--gold); margin-bottom: 28px; }
+        .category-card h3 { font-size: 24px; font-weight: 400; margin-bottom: 18px; color: #fff; letter-spacing: 0.5px; }
+        .category-card p { color: rgba(255,255,255,0.82); line-height: 1.8; font-size: 15px; margin-bottom: 0; }
+
+        /* ── Insight Split ──────────────────────────── */
+        .insight-section { padding: 60px 0; background: #050505; }
+        .insight-box { display: flex; background: var(--glass); border: 1px solid var(--border); border-radius: 38px; overflow: hidden; backdrop-filter: blur(20px); }
+        .insight-img { flex: 1; min-height: 480px; background-size: cover; background-position: center; }
+        .insight-content { flex: 1; padding: 72px; display: flex; flex-direction: column; justify-content: center; background: rgba(0,0,0,0.28); }
+        .insight-tag { color: var(--gold); font-size: 11px; letter-spacing: 5px; margin-bottom: 18px; text-transform: uppercase; font-weight: 700; }
+        .insight-title { font-size: 36px; font-weight: 300; margin-bottom: 26px; color: #fff; line-height: 1.3; }
+        .insight-desc { color: rgba(255,255,255,0.88); line-height: 2; margin-bottom: 36px; font-size: 15px; }
+
+        /* ── Process Timeline ───────────────────────── */
+        .process-section { padding: 80px 0; }
+        .process-title-wrap { text-align: center; margin-bottom: 80px; }
+        .process-step { position: relative; padding-left: 46px; margin-bottom: 55px; border-left: 1px solid var(--border); }
+        .process-step::before { content: ''; position: absolute; left: -6px; top: 2px; width: 11px; height: 11px; background: var(--gold); border-radius: 50%; box-shadow: 0 0 14px var(--gold); }
+        .step-num { color: var(--gold); font-size: 11px; font-weight: 700; margin-bottom: 10px; display: block; letter-spacing: 3px; }
+        .step-title { font-size: 20px; font-weight: 500; margin-bottom: 12px; color: #fff; }
+        .step-content { color: rgba(255,255,255,0.78); font-size: 14px; line-height: 1.7; }
+
+        /* ── Handbook CTA ────────────────────────────── */
+        .handbook-cta { background: linear-gradient(45deg,#111,#0a0a0a); padding: 80px; border-radius: 38px; border: 1px solid var(--border); text-align: center; margin-top: 60px; }
+        .handbook-cta h3 { font-size: 32px; font-weight: 300; color: #fff; margin-bottom: 18px; }
+        .handbook-cta p { color: rgba(255,255,255,0.80); margin-bottom: 38px; }
+
+        /* ── Mistake Cards ───────────────────────────── */
+        .mistake-card { background: rgba(255,50,50,0.05); border: 1px solid rgba(255,50,50,0.12); padding: 40px; border-radius: 28px; height: 100%; transition: 0.4s; }
+        .mistake-card:hover { background: rgba(255,50,50,0.1); transform: translateY(-5px); border-color: rgba(255,50,50,0.3); }
+        .mistake-num { color: #ff4d4d; font-size: 11px; font-weight: 700; display: block; margin-bottom: 18px; letter-spacing: 3px; }
+        .mistake-card h4 { font-size: 19px; font-weight: 400; margin-bottom: 14px; color: #fff; }
+        .mistake-card p { font-size: 14px; color: rgba(255,255,255,0.82); line-height: 1.65; margin-bottom: 0; }
+
+        /* ── Blog Cards ──────────────────────────────── */
+        .blog-card-premium { background: var(--glass); border: 1px solid var(--border); border-radius: 24px; overflow: hidden; transition: 0.5s; }
+        .blog-card-premium:hover { border-color: var(--gold); }
+        .blog-thumb { height: 230px; background-size: cover; background-position: center; transition: 0.5s; }
+        .blog-card-premium:hover .blog-thumb { transform: scale(1.06); }
+        .blog-info { padding: 28px; }
+        .blog-info .date { color: var(--gold); font-size: 11px; margin-bottom: 14px; display: block; opacity: 0.8; letter-spacing: 1px; }
+        .blog-info h4 { font-size: 19px; font-weight: 400; margin-bottom: 12px; line-height: 1.4; color: #fff; }
+        .blog-info h4 a { color: #fff; transition: 0.3s; }
+        .blog-info h4 a:hover { color: var(--gold); }
+        .blog-info p { font-size: 14px; color: rgba(255,255,255,0.80); line-height: 1.65; margin-bottom: 22px; }
+        .read-more { color: var(--gold); font-size: 12px; font-weight: 600; text-transform: uppercase; letter-spacing: 1.5px; display: inline-flex; align-items: center; gap: 10px; }
+        .read-more i { transition: 0.3s; }
+        .read-more:hover i { transform: translateX(5px); }
+
+        .section-heading { text-align: center; width: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center; margin-bottom: 40px; }
+        
+        @media (max-width: 991px) {
+            .insight-box { flex-direction: column; }
+            .insight-img { min-height: 280px; }
+            .insight-content { padding: 36px; }
+            .handbook-cta { padding: 48px 28px; }
+        }
+    </style>
+</head>
+
+
+
+
+
+<body>
+    <header class="header sticky-active">
+        <div class="primary-header">
+            <div class="container">
+                <div class="primary-header-inner">
+                    <div class="header-left-wrap">
+                        <div class="header-logo d-lg-block">
+                            <a href="index.html"><img src="assets/img/logo/zenith-logo.png" alt="logo"></a>
+                        </div>
+                        <div class="header-menu-wrap">
+                            <div class="mobile-menu-items">
+                                <ul>
+                                    <li class="has-submenu">
+                                        <a href="index.html">Trang Chủ <i class="fa-solid fa-chevron-down"></i></a>
+                                        <ul class="submenu">
+                                            <li><a href="about.html">Về chúng tôi</a></li>
+                                            <li><a href="contact.html">Liên hệ</a></li>
+                                        </ul>
+                                    </li>
+                                    <li class="has-submenu">
+                                        <a href="service.html">Dịch Vụ <i class="fa-solid fa-chevron-down"></i></a>
+                                        <ul class="submenu">
+                                            <li><a href="thiet-ke-kien-truc.html">Thiết kế kiến trúc</a></li>
+                                            <li><a href="thiet-ke-noi-that.html">Thiết kế & Thi công nội thất</a></li>
+                                            <li><a href="thi-cong-phan-tho.html">Thi công phần thô</a></li>
+                                            <li><a href="xay-nha-tron-goi.html">Xây nhà trọn gói</a></li>
+                                        </ul>
+                                    </li>
+                                    <li class="has-submenu">
+                                        <a href="portfolio.html">Dự Án <i class="fa-solid fa-chevron-down"></i></a>
+                                        <ul class="submenu">
+                                            <li><a href="nha-pho.html">Nhà Phố</a></li>
+                                            <li><a href="biet-thu.html">Biệt Thự</a></li>
+                                            <li><a href="can-ho.html">Căn Hộ</a></li>
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        <a href="pricing.html">Báo Giá</a>
+                                    </li>
+                                    <li class="has-submenu active">
+                                        <a href="cam-nang.html">Cẩm Nang <i class="fa-solid fa-chevron-down"></i></a>
+                                        <ul class="submenu">
+                                            <li><a href="kien-thuc-xay-nha.html">Kiến Thức Xây Nhà</a></li>
+                                            <li><a href="kien-thuc-phong-thuy.html">Kiến Thức Phong Thủy</a></li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="header-right-wrap">
+                        <a href="tel:0123456789" class="header-contact">
+                            <span class="icon"><i class="fa-regular fa-phone"></i></span>
+                            <span class="content"><span class="call-text">Hotline liên hệ</span><span class="call-number">0123 456 789</span></span>
+                        </a>
+                        <div class="header-btn-wrap"><a href="contact.html" class="tl-primary-btn header-btn">Nhận Tư Vấn</a></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div id="zenith-smooth-wrapper">
+        <div id="zenith-smooth-content">
+            <section class="knowledge-hero" style="background-image: url('https://images.unsplash.com/photo-1541888946425-d81bb19240f5?q=80&w=2000&auto=format&fit=crop');">
+                <div class="container hero-content">
+                    <span class="hero-label">Chuyên gia tư vấn xây dựng</span>
+                    <h1 class="hero-title">KIẾN THỨC <span style="font-weight: 800;">XÂY NHÀ</span></h1>
+                    <div style="width: 40px; height: 1px; background: var(--gold); margin: 0 auto; opacity: 0.5;"></div>
+                </div>
+            </section>
+
+            <section class="category-section">
+                <div class="container">
+                    <div class="row gy-5">
+                        <div class="col-lg-4 col-md-6">
+                            <div class="category-card">
+                                <div class="icon"><i class="fa-solid fa-calculator"></i></div>
+                                <h3>Dự toán tài chính</h3>
+                                <p>Phân tích chi tiết các loại chi phí, từ phần thô đến hoàn thiện, giúp chủ đầu tư kiểm soát ngân sách hiệu quả nhất.</p>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-6">
+                            <div class="category-card">
+                                <div class="icon"><i class="fa-solid fa-file-contract"></i></div>
+                                <h3>Pháp lý xây dựng</h3>
+                                <p>Tổng hợp các quy định về xin cấp phép, hoàn công và các tiêu chuẩn an toàn kỹ thuật trong xây dựng nhà ở dân dụng.</p>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-6">
+                            <div class="category-card">
+                                <div class="icon"><i class="fa-solid fa-compass-drafting"></i></div>
+                                <h3>Thiết kế tối ưu</h3>
+                                <p>Cách bố trí công năng thông minh, tận dụng ánh sáng tự nhiên và thông gió để tạo nên không gian sống lý tưởng.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="insight-section">
+                <div class="container">
+                    <div class="insight-box">
+                        <div class="insight-img" style="background-image: url('assets/img/handbook/insight.png'); background-color: #1a1a1a; width: 100%; display: block;"></div>
+                        <div class="insight-content">
+                            <span class="insight-tag">Featured Insight</span>
+                            <h2 class="insight-title">Tư duy đúng khi bắt đầu xây dựng tổ ấm</h2>
+                            <p class="insight-desc">Xây nhà không chỉ là việc lắp ghép gạch đá, đó là hành trình tạo dựng không gian sống. Chúng tôi chia sẻ những bí quyết về lựa chọn vật liệu bền vững và cách giám sát thi công đạt chuẩn quốc tế.</p>
+                            <a href="#" class="tl-primary-btn" style="align-self: flex-start;">Khám phá ngay</a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="process-section" style="background: #080808;">
+                <div class="container">
+                    <div class="process-title-wrap">
+                        <span class="hero-label" style="text-align: center;">The Journey</span>
+                        <h2 style="font-size: 45px; font-weight: 600; letter-spacing: 5px; color: #fff; text-align: center;">LỘ TRÌNH XÂY DỰNG</h2>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-3 col-md-6">
+                            <div class="process-step">
+                                <span class="step-num">STAGE 01</span>
+                                <h4 class="step-title">Lập kế hoạch</h4>
+                                <p class="step-content">Xác định nhu cầu, phong cách và dự trù tài chính ban đầu.</p>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-md-6">
+                            <div class="process-step">
+                                <span class="step-num">STAGE 02</span>
+                                <h4 class="step-title">Thiết kế & Pháp lý</h4>
+                                <p class="step-content">Hoàn thiện bản vẽ kiến trúc và xin giấy phép xây dựng.</p>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-md-6">
+                            <div class="process-step">
+                                <span class="step-num">STAGE 03</span>
+                                <h4 class="step-title">Thi công phần thô</h4>
+                                <p class="step-content">Xây dựng khung xương, hệ thống điện nước ngầm.</p>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-md-6">
+                            <div class="process-step">
+                                <span class="step-num">STAGE 04</span>
+                                <h4 class="step-title">Hoàn thiện & Nội thất</h4>
+                                <p class="step-content">Trang trí bề mặt, lắp đặt nội thất và bàn giao nhà.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="handbook-cta">
+                        <h3 style="font-size: 32px; font-weight: 200; margin-bottom: 20px; color: #fff;">Bạn muốn nhận trọn bộ "Cẩm Nang Xây Nhà"?</h3>
+                        <p style="color: rgba(255,255,255,0.8); margin-bottom: 40px;">Tài liệu chuyên sâu hơn 100 trang được biên soạn bởi các chuyên gia Zenith House.</p>
+                        <a href="contact.html" class="tl-primary-btn">Tải xuống miễn phí (PDF)</a>
+                    </div>
+                </div>
+            </section>
+
+            <section class="common-mistakes-section pt-80 pb-80" style="background: #0a0a0a;">
+                <div class="container">
+                    <div class="section-heading text-center mb-80">
+                        <span class="hero-label" style="text-align: center;">Chuyên gia cảnh báo</span>
+                        <h2 style="font-size: 45px; font-weight: 600; letter-spacing: 5px; color: #fff; text-align: center;">5 SAI LẦM PHỔ BIẾN</h2>
+                        <p style="color: rgba(255,255,255,0.8); max-width: 600px; margin: 20px auto 0;">Tránh được những điều này sẽ giúp bạn tiết kiệm hàng trăm triệu đồng và thời gian quý báu.</p>
+                    </div>
+                    <div class="row gy-4">
+                        <div class="col-lg-4">
+                            <div class="mistake-card">
+                                <span class="mistake-num">01</span>
+                                <h4>Ham rẻ khi chọn vật liệu</h4>
+                                <p>Vật liệu kém chất lượng dẫn đến nứt tường, thấm dột sau 2-3 năm sử dụng. Chi phí sửa chữa sẽ gấp 5 lần số tiền tiết kiệm ban đầu.</p>
+                            </div>
+                        </div>
+                        <div class="col-lg-4">
+                            <div class="mistake-card">
+                                <span class="mistake-num">02</span>
+                                <h4>Thay đổi thiết kế khi đang thi công</h4>
+                                <p>Việc này phá vỡ kết cấu chịu lực và gây lãng phí nhân công. Hãy chốt bản vẽ kỹ thuật 100% trước khi động thổ.</p>
+                            </div>
+                        </div>
+                        <div class="col-lg-4">
+                            <div class="mistake-card">
+                                <span class="mistake-num">03</span>
+                                <h4>Thiếu dự phòng ngân sách</h4>
+                                <p>Luôn có những chi phí phát sinh ngoài ý muốn. Zenith House khuyên bạn nên dự phòng ít nhất 10-15% tổng giá trị hợp đồng.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <style>
+                .mistake-card {
+                    background: rgba(255, 50, 50, 0.05);
+                    border: 1px solid rgba(255, 50, 50, 0.1);
+                    padding: 40px;
+                    border-radius: 30px;
+                    height: 100%;
+                    transition: 0.4s;
+                }
+                .mistake-card:hover { background: rgba(255, 50, 50, 0.1); transform: translateY(-5px); border-color: rgba(255, 50, 50, 0.3); }
+                .mistake-num { color: #ff4d4d; font-size: 12px; font-weight: 700; display: block; margin-bottom: 20px; letter-spacing: 2px; }
+                .mistake-card h4 { font-size: 20px; font-weight: 400; margin-bottom: 15px; color: #fff; }
+                .mistake-card p { font-size: 14px; color: rgba(255,255,255,0.8); line-height: 1.6; margin-bottom: 0; }
+            </style>
+
+            <section class="related-articles-section pb-80" style="background: #080808;">
+                <div class="container">
+                    <div class="section-heading text-center mb-80">
+                        <span class="hero-label">Đọc thêm</span>
+                        <h2 style="font-size: 45px; font-weight: 600; letter-spacing: 5px; color: #fff;">BÀI VIẾT CHUYÊN SÂU</h2>
+                    </div>
+                    <div class="row gy-5">
+                        <div class="col-lg-4 col-md-6">
+                            <div class="blog-card-premium">
+                                <div class="blog-thumb">
+                                    <img src="assets/img/handbook/quy-trinh.png" alt="Quy trình" style="width: 100%; height: 100%; object-fit: cover;">
+                                </div>
+                                <div class="blog-info">
+                                    <span class="date">12 Tháng 5, 2025</span>
+                                    <h4><a href="#">Quy trình xin giấy phép xây dựng 2025</a></h4>
+                                    <p>Cập nhật những thay đổi mới nhất trong bộ luật xây dựng và các hồ sơ cần thiết để việc động thổ diễn ra suôn sẻ.</p>
+                                    <a href="#" class="read-more">Xem chi tiết <i class="fa-solid fa-arrow-right-long"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-6">
+                            <div class="blog-card-premium">
+                                <div class="blog-thumb">
+                                    <img src="assets/img/handbook/nha-thau.png" alt="Nhà thầu" style="width: 100%; height: 100%; object-fit: cover;">
+                                </div>
+                                <div class="blog-info">
+                                    <span class="date">10 Tháng 5, 2025</span>
+                                    <h4><a href="#">Cách chọn nhà thầu xây dựng uy tín</a></h4>
+                                    <p>Đừng chỉ nhìn vào giá cả, hãy xem xét năng lực thi công, cam kết bảo hành và các dự án thực tế họ đã triển khai.</p>
+                                    <a href="#" class="read-more">Xem chi tiết <i class="fa-solid fa-arrow-right-long"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-6">
+                            <div class="blog-card-premium">
+                                <div class="blog-thumb">
+                                    <img src="assets/img/handbook/du-toan.png" alt="Dự toán" style="width: 100%; height: 100%; object-fit: cover;">
+                                </div>
+                                <div class="blog-info">
+                                    <span class="date">08 Tháng 5, 2025</span>
+                                    <h4><a href="#">Dự toán ngân sách: Tránh phát sinh</a></h4>
+                                    <p>Hướng dẫn lập bảng dự toán chi tiết từ phần thô đến hoàn thiện nội thất, giúp gia chủ kiểm soát dòng tiền tối ưu.</p>
+                                    <a href="#" class="read-more">Xem chi tiết <i class="fa-solid fa-arrow-right-long"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <style>
+                .blog-card-premium {
+                    background: var(--glass);
+                    border: 1px solid var(--border);
+                    border-radius: 25px;
+                    overflow: hidden;
+                    transition: 0.5s;
+                }
+                .blog-card-premium:hover { border-color: var(--gold); }
+                .blog-thumb { height: 230px; background-size: cover; background-position: center; transition: 0.5s; }
+                .blog-card-premium:hover .blog-thumb { transform: scale(1.1); }
+                .blog-info { padding: 30px; }
+                .blog-info .date { color: var(--gold); font-size: 12px; margin-bottom: 15px; display: block; opacity: 0.7; }
+                .blog-info h4 { font-size: 20px; font-weight: 300; margin-bottom: 15px; line-height: 1.4; }
+                .blog-info h4 a { color: #fff; transition: 0.3s; }
+                .blog-info h4 a:hover { color: var(--gold); }
+                .blog-info p { font-size: 14px; color: rgba(255,255,255,0.8); line-height: 1.6; margin-bottom: 25px; }
+                .read-more { color: var(--gold); font-size: 13px; font-weight: 600; text-transform: uppercase; letter-spacing: 1px; display: inline-flex; align-items: center; gap: 10px; }
+                .read-more i { transition: 0.3s; }
+                .read-more:hover i { transform: translateX(5px); }
+            </style>
+
+            <footer class="footer-section overflow-hidden">
+                <div class="footer-bg"
+                    data-background="https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?q=80&w=2000&auto=format&fit=crop">
+                </div>
+                <div class="footer-shade"></div>
+                <div class="container container-2">
+                    <div class="row footer-wrap">
+                        <div class="col-lg-3 col-md-6">
+                            <div class="footer-widget">
+                                <div class="widget-header">
+                                    <div class="footer-logo">
+                                        <a href="index.html"><img src="assets/img/logo/zenith-logo.png" alt="logo"></a>
+                                    </div>
+                                </div>
+                                <p class="mb-10">Chúng tôi biến tầm nhìn của bạn thành những <br> không gian được chế
+                                    tác tinh xảo.</p>
+                                <p class="mb-0">123 Đường Kiến Trúc, Quận 1, <br> TP. Hồ Chí Minh, Việt Nam</p>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-md-6">
+                            <div class="footer-widget footer-col-2">
+                                <ul class="footer-list">
+                                    <li><a href="about.html">Về chúng tôi</a></li>
+                                    <li><a href="service.html">Dịch vụ</a></li>
+                                    <li><a href="contact.html">Tuyển dụng</a></li>
+                                    <li><a href="team.html">Đội ngũ</a></li>
+                                    <li><a href="cam-nang.html">Cẩm Nang</a></li>
+                                    <li><a href="pricing.html">Báo Giá</a></li>
+                                    <li><a href="contact.html">Liên hệ</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-md-6">
+                            <div class="footer-widget footer-col-2 pl-0">
+                                <ul class="footer-list">
+                                    <li><a href="javascript:void(0);">Dự án của chúng tôi</a></li>
+                                    <li><a href="contact.html">Đối tác</a></li>
+                                    <li><a href="contact.html">Chương trình đối tác</a></li>
+                                    <li><a href="contact.html">Chương trình liên kết</a></li>
+                                    <li><a href="contact.html">Điều khoản & Điều kiện</a></li>
+                                    <li><a href="contact.html">Trung tâm hỗ trợ</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-md-6">
+                            <div class="footer-widget">
+                                <div class="footer-address">
+                                    <a class="number" href="tel:0123456789">0123 456 789</a>
+                                    <a class="mail" href="mailto:info@zenithhouse.vn">info@zenithhouse.vn</a>
+                                    <ul class="social-list">
+                                        <li><a href="javascript:void(0);">Facebook</a></li>
+                                        <li><a href="javascript:void(0);">Instagram</a></li>
+                                        <li><a href="javascript:void(0);">YouTube</a></li>
+                                        <li><a href="javascript:void(0);">Twitter</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="copyright-area">
+                    <div class="container">
+                        <div class="copyright-content">
+                            <p>© 2025 Zenith House. Đã đăng ký bản quyền.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="footer-text"><span>Zenith House</span></div>
+            </footer>
+        </div>
+    </div>
+
+    <div id="scroll-percentage"><span id="scroll-percentage-value"></span></div>
+
+    <script src="assets/js/vendor/jquary-3.7.1.min.js"></script>
+    <script src="assets/js/vendor/bootstrap-bundle.js"></script>
+    <script src="assets/js/vendor/imagesloaded-pkgd.js"></script>
+    <script src="assets/js/vendor/waypoints.min.js"></script>
+    <script src="assets/js/vendor/venobox.min.js"></script>
+    <script src="assets/js/vendor/odometer.min.js"></script>
+    <script src="assets/js/vendor/meanmenu.js"></script>
+    <script src="assets/js/vendor/jquery.isotope.js"></script>
+    <script src="assets/js/vendor/swiper.min.js"></script>
+    <script src="assets/js/vendor/split-type.min.js"></script>
+    <script src="assets/js/vendor/gsap.min.js"></script>
+    <script src="assets/js/vendor/scroll-trigger.min.js"></script>
+    <script src="assets/js/vendor/scroll-smoother.js"></script>
+    <script src="assets/js/vendor/jquery.carouselTicker.js"></script>
+    <script src="assets/js/vendor/nice-select.js"></script>
+    <script src="assets/js/main.js"></script>
+</body>
+</html>

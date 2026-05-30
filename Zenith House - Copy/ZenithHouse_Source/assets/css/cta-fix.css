@@ -1,0 +1,103 @@
+
+/* CTA Section Fix - Perfect Readability & Overlay */
+.cta-section-3 {
+    position: relative;
+    padding: 180px 0;
+    overflow: hidden;
+    background-color: #000;
+    z-index: 1; /* Cấp 1: Nền */
+}
+
+/* Mạnh mẽ hơn: Lớp phủ đen toàn phần */
+.cta-section-3::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /* Lớp phủ đen mờ đậm hơn để text cực kỳ dễ đọc */
+    background: rgba(0, 0, 0, 0.65); 
+    z-index: 2; /* Cấp 2: Lớp phủ (Nằm trên ảnh nền inline) */
+}
+
+/* Đảm bảo text luôn nổi bật trên lớp phủ */
+.cta-wrap-3 {
+    position: relative;
+    z-index: 3; /* Cấp 3: Nội dung (Nằm trên lớp phủ) */
+}
+
+.cta-section-3 .sub-heading {
+    color: var(--tl-color-theme-primary, #C8A97E) !important;
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+    margin-bottom: 40px;
+    display: inline-block;
+}
+
+.cta-section-3 .section-title.title-2 {
+    color: #ffffff;
+    font-size: 72px;
+    font-weight: 300;
+    line-height: 1.1;
+    margin-bottom: 50px;
+    letter-spacing: 1px;
+}
+
+.cta-section-3 .section-title.title-2 span {
+    color: var(--tl-color-theme-primary, #C8A97E) !important;
+    font-size: 88px;
+    font-weight: 800;
+    display: block;
+    letter-spacing: -2px;
+    margin-top: 10px;
+}
+
+.cta-btn-circle {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: #ffffff !important;
+    text-decoration: none;
+    transition: all 0.5s ease;
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+}
+
+.cta-btn-circle span {
+    font-size: 13px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    line-height: 1.4;
+    text-align: center;
+}
+
+.cta-btn-circle i {
+    margin-top: 10px;
+    color: var(--tl-color-theme-primary, #C8A97E);
+    font-size: 16px;
+}
+
+.cta-btn-circle:hover {
+    background: var(--tl-color-theme-primary, #C8A97E);
+    border-color: var(--tl-color-theme-primary, #C8A97E);
+    transform: scale(1.1);
+}
+
+.cta-btn-circle:hover i {
+    color: #ffffff;
+}
+
+@media (max-width: 991px) {
+    .cta-section-3 .section-title.title-2 { font-size: 42px; }
+    .cta-section-3 .section-title.title-2 span { font-size: 48px; }
+    .cta-btn-circle { width: 120px; height: 120px; }
+}

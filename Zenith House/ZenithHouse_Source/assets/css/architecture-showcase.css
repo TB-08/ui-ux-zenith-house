@@ -1,0 +1,204 @@
+/* Architecture Showcase - Luxury Dark UI */
+.architecture-showcase {
+    background-color: #000000;
+    padding: 150px 0;
+    color: #ffffff;
+    overflow: hidden;
+    position: relative;
+}
+
+.architecture-showcase .bg-accent {
+    position: absolute;
+    top: -10%;
+    right: -5%;
+    width: 600px;
+    height: 600px;
+    background: radial-gradient(circle, rgba(200, 169, 126, 0.05) 0%, transparent 70%);
+    filter: blur(80px);
+    z-index: 0;
+}
+
+.architecture-showcase .container {
+    position: relative;
+    z-index: 2;
+}
+
+.arch-header {
+    margin-bottom: 100px;
+}
+
+.arch-header .arch-tag {
+    font-size: 11px;
+    letter-spacing: 6px;
+    text-transform: uppercase;
+    color: #C8A97E;
+    display: block;
+    margin-bottom: 20px;
+    font-weight: 600;
+}
+
+.arch-header .arch-title {
+    font-size: clamp(40px, 8vw, 90px);
+    line-height: 0.9;
+    font-weight: 200;
+    font-family: 'Montserrat', sans-serif;
+    margin: 0;
+}
+
+.arch-header .arch-title span {
+    display: block;
+    font-weight: 800;
+    color: #C8A97E;
+    margin-left: 50px;
+}
+
+.arch-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.2fr;
+    gap: 80px;
+    align-items: center;
+}
+
+.arch-visual {
+    position: relative;
+}
+
+.arch-visual .main-img {
+    width: 100%;
+    border-radius: 20px;
+    box-shadow: 0 50px 100px rgba(0,0,0,0.5);
+    filter: brightness(0.8);
+    transition: all 0.8s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.arch-visual:hover .main-img {
+    filter: brightness(1);
+    transform: scale(1.02);
+}
+
+.arch-visual .floating-card {
+    position: absolute;
+    bottom: -40px;
+    right: -40px;
+    background: rgba(255, 255, 255, 0.03);
+    backdrop-filter: blur(25px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 40px;
+    border-radius: 24px;
+    max-width: 280px;
+    box-shadow: 0 30px 60px rgba(0,0,0,0.3);
+}
+
+.arch-visual .floating-card h4 {
+    color: #C8A97E;
+    font-size: 32px;
+    margin-bottom: 5px;
+    font-weight: 700;
+}
+
+.arch-visual .floating-card p {
+    font-size: 13px;
+    color: rgba(255, 255, 255, 0.6);
+    margin: 0;
+    line-height: 1.6;
+}
+
+.arch-info .feature-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.arch-info .feature-item {
+    margin-bottom: 50px;
+    display: flex;
+    gap: 30px;
+    transition: all 0.4s ease;
+}
+
+.arch-info .feature-item .icon-box {
+    flex-shrink: 0;
+    width: 60px;
+    height: 60px;
+    border: 1px solid rgba(200, 169, 126, 0.3);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #C8A97E;
+    font-size: 20px;
+    transition: all 0.4s ease;
+}
+
+.arch-info .feature-item:hover .icon-box {
+    background: #C8A97E;
+    color: #000;
+    transform: rotateY(180deg);
+}
+
+.arch-info .feature-item .text h3 {
+    font-size: 22px;
+    font-weight: 600;
+    margin-bottom: 10px;
+    color: #ffffff;
+}
+
+.arch-info .feature-item .text p {
+    font-size: 15px;
+    color: rgba(255, 255, 255, 0.5);
+    line-height: 1.7;
+    margin: 0;
+}
+
+.arch-cta {
+    margin-top: 60px;
+    display: flex;
+    gap: 20px;
+}
+
+.btn-luxury {
+    padding: 18px 40px;
+    border-radius: 100px;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    transition: all 0.4s ease;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.btn-luxury.gold {
+    background: #C8A97E;
+    color: #000;
+}
+
+.btn-luxury.outline {
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: #fff;
+}
+
+.btn-luxury:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(200, 169, 126, 0.2);
+}
+
+@media (max-width: 991px) {
+    .arch-grid {
+        grid-template-columns: 1fr;
+        gap: 60px;
+    }
+    .arch-header .arch-title {
+        font-size: 50px;
+    }
+    .arch-header .arch-title span {
+        margin-left: 0;
+    }
+    .arch-visual .floating-card {
+        right: 20px;
+        bottom: 20px;
+        padding: 25px;
+    }
+}

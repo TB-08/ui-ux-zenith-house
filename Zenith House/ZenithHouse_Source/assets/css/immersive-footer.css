@@ -1,0 +1,123 @@
+/* Immersive Luxury Footer */
+.footer-immersive {
+    position: relative;
+    background-color: #000;
+    color: #fff;
+    padding: 100px 0 50px;
+    overflow: hidden !important;
+    min-height: 80vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.footer-immersive .footer-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    opacity: 0.4;
+    z-index: 1;
+}
+
+.footer-immersive .footer-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(180deg, rgba(0,0,0,1) 0%, rgba(0,0,0,0) 50%, rgba(0,0,0,0.8) 100%);
+    z-index: 2;
+}
+
+.footer-immersive .bg-text {
+    position: absolute;
+    bottom: 2%;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: clamp(80px, 22vw, 280px);
+    font-weight: 900;
+    color: rgba(255, 255, 255, 0.02);
+    z-index: 0;
+    pointer-events: none;
+    text-transform: uppercase;
+    line-height: 0.7;
+    text-align: center;
+    letter-spacing: -10px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.footer-immersive .container {
+    position: relative;
+    z-index: 5;
+}
+
+.footer-immersive .footer-widgets {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 40px;
+}
+
+.footer-immersive .widget-title {
+    font-size: 14px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: #C8A97E;
+    margin-bottom: 30px;
+    font-weight: 700;
+}
+
+.footer-immersive .footer-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-immersive .footer-list li {
+    margin-bottom: 12px;
+}
+
+.footer-immersive .footer-list li a {
+    color: rgba(255, 255, 255, 0.6);
+    text-decoration: none;
+    font-size: 15px;
+    transition: all 0.3s ease;
+}
+
+.footer-immersive .footer-list li a:hover {
+    color: #C8A97E;
+    padding-left: 5px;
+}
+
+.footer-immersive .footer-bottom {
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    padding-top: 40px;
+    margin-top: 60px;
+    text-align: center;
+}
+
+.footer-immersive .copyright {
+    font-size: 13px;
+    color: rgba(255, 255, 255, 0.4);
+}
+
+@media (max-width: 991px) {
+    .footer-immersive .footer-widgets {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .footer-immersive .bg-text {
+        font-size: 120px;
+    }
+}
+
+@media (max-width: 767px) {
+    .footer-immersive .footer-widgets {
+        grid-template-columns: 1fr;
+    }
+}

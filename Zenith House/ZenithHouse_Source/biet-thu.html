@@ -1,0 +1,789 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="Thiết kế và thi công biệt thự sang trọng, đẳng cấp tại Zenith House.">
+
+        <!-- Site Title -->
+        <title>Royal Villas Collection - Zenith House</title>
+
+        <!-- Place favicon.ico in the root directory -->
+        <link rel="shortcut icon" type="image/x-icon" href="assets/img/favicon.png">
+
+        <!-- CSS here -->
+        <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+        <link rel="stylesheet" href="assets/css/fontawesome.min.css">
+        <link rel="stylesheet" href="assets/css/venobox.min.css">
+        <link rel="stylesheet" href="assets/css/odometer.min.css">
+        <link rel="stylesheet" href="assets/css/nice-select.css">
+        <link rel="stylesheet" href="assets/css/carouselTicker.css">
+        <link rel="stylesheet" href="assets/css/animation.css">
+        <link rel="stylesheet" href="assets/css/swiper.min.css">
+        <link rel="stylesheet" href="assets/css/main.css">
+    <link rel="stylesheet" href="assets/css/header-compact.css">
+        <link rel="stylesheet" href="assets/css/nav-dropdown.css">
+        <link rel="stylesheet" href="assets/css/sidebar-premium.css">
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+        
+        <style>
+            :root {
+                --zenith-gold: #C8A97E;
+                --deep-black: #050505;
+                --soft-gold: rgba(200, 169, 126, 0.6);
+            }
+
+            body, html { background: var(--midnight); color: #fff; }
+            
+
+            body { font-family: 'Montserrat', sans-serif; overflow-x: hidden; }
+
+            /* Editorial Hero */
+            .villa-hero-editorial {
+                height: 100vh;
+                position: relative;
+                overflow: hidden;
+                display: flex;
+                align-items: center;
+                background: #000;
+            }
+
+            .hero-bg-container {
+                position: absolute;
+                top: 0; left: 0; width: 100%; height: 100%;
+                z-index: 1;
+            }
+
+            .hero-bg-image {
+                width: 100%;
+                height: 100%;
+                background-image: url('https://images.unsplash.com/photo-1613490493576-7fde63acd811?q=80&w=2000&auto=format&fit=crop');
+                background-size: cover;
+                background-position: center;
+                opacity: 0.6;
+                transform: scale(1.1);
+                animation: slowZoom 20s infinite alternate;
+            }
+
+            @keyframes slowZoom {
+                from { transform: scale(1); }
+                to { transform: scale(1.15); }
+            }
+
+            .hero-overlay-editorial {
+                position: absolute;
+                top: 0; left: 0; width: 100%; height: 100%;
+                background: linear-gradient(90deg, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0.2) 50%, rgba(0,0,0,0.8) 100%);
+                z-index: 2;
+            }
+
+            .hero-content-editorial {
+                position: relative;
+                z-index: 10;
+                width: 100%;
+                padding: 0 10%;
+            }
+
+            .hero-content-editorial .label {
+                font-size: 10px;
+                text-transform: uppercase;
+                letter-spacing: 10px;
+                color: var(--zenith-gold);
+                margin-bottom: 20px;
+                display: block;
+                animation: fadeInLeft 1.5s ease forwards;
+            }
+
+            .hero-content-editorial h1 {
+                font-size: clamp(32px, 6vw, 85px);
+                font-weight: 100;
+                line-height: 0.95;
+                text-transform: uppercase;
+                margin-bottom: 25px;
+                letter-spacing: -1px;
+                color: #fff;
+            }
+
+            .hero-content-editorial h1 span {
+                display: block;
+                font-weight: 900;
+                color: var(--zenith-gold);
+                letter-spacing: 3px;
+            }
+
+            .hero-description {
+                max-width: 550px;
+                font-size: 16px;
+                font-weight: 300;
+                line-height: 1.8;
+                color: rgba(255,255,255,0.7);
+                margin-bottom: 40px;
+                animation: fadeInUp 1.5s ease forwards 0.5s;
+                opacity: 0;
+            }
+
+            .hero-line {
+                width: 100px;
+                height: 1px;
+                background: var(--zenith-gold);
+                margin-bottom: 30px;
+            }
+
+
+            /* Luxury Grid Cards */
+            .standards-section {
+                padding: 60px 0;
+                background: var(--deep-black);
+            }
+
+            .standard-card {
+                padding: 60px 40px;
+                background: rgba(255,255,255,0.03);
+                border: 1px solid rgba(255,255,255,0.08);
+                transition: 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+                height: 100%;
+                position: relative;
+                overflow: hidden;
+            }
+
+            .standard-card::before {
+                content: '';
+                position: absolute;
+                top: 0; left: 0; width: 2px; height: 0;
+                background: var(--zenith-gold);
+                transition: 0.6s;
+            }
+
+            .standard-card:hover::before { height: 100%; }
+
+            .standard-card:hover {
+                background: rgba(255,255,255,0.06);
+                transform: translateY(-10px);
+                border-color: rgba(200, 169, 126, 0.5);
+                box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+            }
+
+            .standard-card .num {
+                font-size: 40px;
+                font-weight: 900;
+                color: rgba(200, 169, 126, 0.1);
+                position: absolute;
+                top: 30px; right: 30px;
+                transition: 0.4s;
+            }
+
+            .standard-card:hover .num {
+                color: rgba(200, 169, 126, 0.3);
+            }
+
+            .standard-card p {
+                color: rgba(255,255,255,0.85);
+                font-size: 15px;
+                line-height: 1.8;
+                margin-bottom: 0;
+            }
+
+            .standard-card h3 {
+                font-size: 24px;
+                font-weight: 800;
+                text-transform: uppercase;
+                margin-bottom: 25px;
+                color: #fff;
+                letter-spacing: 2px;
+            }
+
+            /* Collection Gallery */
+            .collection-section {
+                padding: 120px 0;
+                background: #000;
+            }
+
+            .editorial-gallery-item {
+                position: relative;
+                margin-bottom: 24px;
+                overflow: hidden;
+            }
+
+            .editorial-gallery-item img {
+                width: 100%;
+                height: 500px;
+                object-fit: cover;
+                transition: 1.2s;
+            }
+
+            .editorial-gallery-item:hover img { transform: scale(1.05); }
+
+            .editorial-gallery-item::after {
+                content: '';
+                position: absolute;
+                bottom: 0; left: 0; width: 100%; height: 100%;
+                background: linear-gradient(0deg, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0.3) 50%, transparent 100%);
+                opacity: 0.5;
+                transition: 0.5s;
+                z-index: 1;
+            }
+
+            .editorial-gallery-item:hover::after {
+                opacity: 1;
+            }
+
+            .gallery-info {
+                position: absolute;
+                bottom: 30px; left: 30px;
+                z-index: 10;
+            }
+
+            .gallery-info h4 {
+                font-size: 28px;
+                font-weight: 300;
+                text-transform: none;
+                margin-bottom: 5px;
+                color: #fff;
+                text-shadow: 0 2px 10px rgba(0,0,0,0.5);
+                letter-spacing: 1px;
+            }
+
+            .gallery-info span {
+                font-size: 11px;
+                text-transform: uppercase;
+                letter-spacing: 5px;
+                color: rgba(255,255,255,0.4);
+                font-weight: 500;
+                display: block;
+                margin-bottom: 10px;
+            }
+
+            /* Animations */
+            @keyframes fadeInLeft {
+                from { opacity: 0; transform: translateX(-30px); }
+                to { opacity: 1; transform: translateX(0); }
+            }
+            @keyframes fadeInUp {
+                from { opacity: 0; transform: translateY(30px); }
+                to { opacity: 1; transform: translateY(0); }
+            }
+
+            /* Consultation Section Sync */
+            .consultation-section { 
+                background: #fdfdfd; 
+                min-height: 100vh; 
+                display: flex; 
+                align-items: center; 
+                padding: 40px 0;
+            }
+            .consultation-card { background: #fff; border-radius: 20px; overflow: hidden; border: 1px solid rgba(0,0,0,0.05); width: 100%; max-width: 1100px; margin: 0 auto; }
+            .consultation-img { height: 100%; background-size: cover; background-position: center; position: relative; min-height: 650px; }
+            .img-overlay { position: absolute; bottom: 0; left: 0; width: 100%; padding: 40px; background: linear-gradient(0deg, rgba(0,0,0,0.9) 0%, transparent 100%); color: #fff; }
+            .img-overlay h3 { font-size: 32px; font-weight: 800; color: #C8A97E; margin-bottom: 5px; }
+            .form-wrapper { padding: 40px 50px; }
+            .form-header { margin-bottom: 25px; text-align: center; }
+            .form-header .sub { font-size: 10px; text-transform: uppercase; letter-spacing: 3px; color: #C8A97E; margin-bottom: 8px; }
+            .form-header .title { font-size: 32px; font-weight: 700; color: #222; }
+            
+            .luxury-contact-form .form-control, 
+            .luxury-contact-form .form-select { 
+                border: 1px solid #f0f0f0 !important; 
+                border-radius: 8px !important; 
+                padding: 12px 18px !important; 
+                font-size: 14px !important;
+                background: #fcfcfc !important;
+                color: #222 !important;
+                transition: all 0.3s ease;
+            }
+            .luxury-contact-form .form-control:focus { border-color: #C8A97E !important; box-shadow: 0 5px 15px rgba(200,169,126,0.1) !important; }
+            
+            .budget-label { font-size: 11px; font-weight: 700; color: #222; margin-bottom: 10px; display: block; text-transform: uppercase; letter-spacing: 1px; }
+            .budget-radios { display: flex; flex-wrap: wrap; gap: 15px; }
+            .radio-item { position: relative; padding-left: 24px; cursor: pointer; font-size: 13px; color: #666; user-select: none; }
+            .radio-item input { position: absolute; opacity: 0; cursor: pointer; }
+            .checkmark { position: absolute; top: 1px; left: 0; height: 16px; width: 16px; background-color: #eee; border-radius: 50%; }
+            .radio-item input:checked ~ .checkmark { background-color: #C8A97E; }
+            .radio-item .checkmark:after { top: 4px; left: 4px; width: 8px; height: 8px; border-radius: 50%; background: white; }
+            
+            .submit-luxury-btn { 
+                background: #C8A97E; 
+                color: #fff; 
+                border: none; 
+                padding: 15px 45px; 
+                border-radius: 0; 
+                font-weight: 700; 
+                font-size: 14px; 
+                letter-spacing: 1.5px; 
+                transition: all 0.4s ease; 
+                box-shadow: 0 8px 20px rgba(200,169,126,0.15);
+                cursor: pointer;
+                width: auto;
+                text-transform: uppercase;
+            }
+            .submit-luxury-btn:hover { background: #222; transform: translateY(-2px); box-shadow: 0 12px 25px rgba(0,0,0,0.15); }
+            
+            @media (max-width: 991px) {
+                .consultation-section { min-height: auto; padding: 60px 0; }
+                .form-wrapper { padding: 30px 20px; }
+            }
+
+            .footer-section.footer-immersive {
+                position: relative !important;
+                background-color: #000 !important;
+                padding: 150px 0 100px !important;
+                overflow: hidden !important;
+                min-height: 100vh !important;
+                display: flex !important;
+                flex-direction: column !important;
+                justify-content: flex-end !important;
+            }
+            .footer-section.footer-immersive .bg-text {
+                position: absolute !important;
+                bottom: 0% !important;
+                left: 50% !important;
+                transform: translateX(-50%) !important;
+                font-size: clamp(100px, 32vw, 520px) !important;
+                font-weight: 900 !important;
+                color: rgba(255, 255, 255, 0.05) !important;
+                z-index: 0 !important;
+                pointer-events: none !important;
+                text-transform: uppercase !important;
+                line-height: 0.65 !important;
+                text-align: center !important;
+                letter-spacing: -15px !important;
+                width: 100% !important;
+                display: flex !important;
+                flex-direction: column !important;
+                align-items: center !important;
+            }
+            .footer-section.footer-immersive .container-2 {
+                position: relative !important;
+                z-index: 5 !important;
+            }
+        </style>
+    </head>
+
+    <body>
+
+        <!-- header-area-start -->
+        <header class="header sticky-active">
+            <div class="primary-header">
+                <div class="container">
+                    <div class="primary-header-inner">
+                        <div class="header-left-wrap">
+                            <div class="header-logo d-lg-block">
+                                <a href="index.html">
+                                    <img src="assets/img/logo/zenith-logo.png" alt="logo">
+                                </a>
+                            </div>
+                            <div class="header-menu-wrap">
+                                <div class="mobile-menu-items">
+                                    <ul>
+                                        <li class="has-submenu">
+                                            <a href="index.html">Trang Chủ <i class="fa-solid fa-chevron-down"></i></a>
+                                            <ul class="submenu">
+                                                <li><a href="about.html">Về chúng tôi</a></li>
+                                                <li><a href="contact.html">Liên hệ</a></li>
+                                            </ul>
+                                        </li>
+                                        <li class="has-submenu">
+                                            <a href="service.html">Dịch Vụ <i class="fa-solid fa-chevron-down"></i></a>
+                                            <ul class="submenu">
+                                                <li><a href="thiet-ke-kien-truc.html">Thiết kế kiến trúc</a></li>
+                                                <li><a href="thiet-ke-noi-that.html">Thiết kế & Thi công nội thất</a></li>
+                                                <li><a href="thi-cong-phan-tho.html">Thi công phần thô</a></li>
+                                                <li><a href="xay-nha-tron-goi.html">Xây nhà trọn gói</a></li>
+                                            </ul>
+                                        </li>
+                                        <li class="has-submenu active">
+                                            <a href="portfolio.html">Dự Án <i class="fa-solid fa-chevron-down"></i></a>
+                                            <ul class="submenu">
+                                                <li><a href="nha-pho.html">Nhà Phố</a></li>
+                                                <li class="active"><a href="biet-thu.html">Biệt Thự</a></li>
+                                                <li><a href="can-ho.html">Căn Hộ</a></li>
+                                            </ul>
+                                        </li>
+                                    <li>
+                                        <a href="pricing.html">Báo Giá</a>
+                                    </li>
+                                        
+                                        <li class="has-submenu ">
+                                            <a href="cam-nang.html">Cẩm Nang <i class="fa-solid fa-chevron-down"></i></a>
+                                            <ul class="submenu">
+                                                <li><a href="kien-thuc-xay-nha.html">Kiến Thức Xây Nhà</a></li>
+                                                <li><a href="kien-thuc-phong-thuy.html">Kiến Thức Phong Thủy</a></li>
+                                            </ul>
+                                        </li>
+                                        
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="header-right-wrap">
+                            <a href="tel:0123456789" class="header-contact">
+                                <span class="icon"><i class="fa-regular fa-phone"></i></span>
+                                <span class="content">
+                                    <span class="call-text">Hotline liên hệ</span>
+                                    <span class="call-number">0123 456 789</span>
+                                </span>
+                            </a>
+                            <div class="header-btn-wrap">
+                                <a href="contact.html" class="tl-primary-btn header-btn">Nhận Tư Vấn</a>
+                            </div>
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <div id="sidebar-area" class="sidebar-area">
+            <button class="sidebar-trigger close">
+                <svg width="20" height="20" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M1.5 1.5L14.5 14.5M14.5 1.5L1.5 14.5" stroke="white" stroke-width="2" stroke-linecap="round"/>
+                </svg>
+            </button>
+            <div class="side-menu-content">
+                <div class="side-menu-top">
+                    <div class="side-menu-logo">
+                        <a href="index.html"><img src="assets/img/logo/zenith-logo.png" alt="logo"></a>
+                    </div>
+                    <div class="side-menu-about" style="margin-top: 40px;">
+                        <h4 class="title">Chúng tôi kiến tạo những thiết kế nội thất vượt thời gian và đầy cảm hứng</h4>
+                    </div>
+                </div>
+
+                <div class="side-menu-middle">
+                    <div class="side-menu-gallary">
+                        <div class="side-menu-gallary-item">
+                            <a href="https://images.pexels.com/photos/1571460/pexels-photo-1571460.jpeg?auto=compress&cs=tinysrgb&w=800" class="venobox" data-gall="gallary1"><img src="https://images.pexels.com/photos/1571460/pexels-photo-1571460.jpeg?auto=compress&cs=tinysrgb&w=800" alt="img"></a>
+                        </div>
+                        <div class="side-menu-gallary-item">
+                            <a href="https://images.pexels.com/photos/1571471/pexels-photo-1571471.jpeg?auto=compress&cs=tinysrgb&w=800" class="venobox" data-gall="gallary1"><img src="https://images.pexels.com/photos/1571471/pexels-photo-1571471.jpeg?auto=compress&cs=tinysrgb&w=800" alt="img"></a>
+                        </div>
+                        <div class="side-menu-gallary-item">
+                            <a href="https://images.pexels.com/photos/1571468/pexels-photo-1571468.jpeg?auto=compress&cs=tinysrgb&w=800" class="venobox" data-gall="gallary1"><img src="https://images.pexels.com/photos/1571468/pexels-photo-1571468.jpeg?auto=compress&cs=tinysrgb&w=800" alt="img"></a>
+                        </div>
+                        <div class="side-menu-gallary-item">
+                            <a href="https://images.pexels.com/photos/1643383/pexels-photo-1643383.jpeg?auto=compress&cs=tinysrgb&w=800" class="venobox" data-gall="gallary1"><img src="https://images.pexels.com/photos/1643383/pexels-photo-1643383.jpeg?auto=compress&cs=tinysrgb&w=800" alt="img"></a>
+                        </div>
+                        <div class="side-menu-gallary-item">
+                            <a href="https://images.pexels.com/photos/1643384/pexels-photo-1643384.jpeg?auto=compress&cs=tinysrgb&w=800" class="venobox" data-gall="gallary1"><img src="https://images.pexels.com/photos/1643384/pexels-photo-1643384.jpeg?auto=compress&cs=tinysrgb&w=800" alt="img"></a>
+                        </div>
+                        <div class="side-menu-gallary-item">
+                            <a href="https://images.pexels.com/photos/1643389/pexels-photo-1643389.jpeg?auto=compress&cs=tinysrgb&w=800" class="venobox" data-gall="gallary1"><img src="https://images.pexels.com/photos/1643389/pexels-photo-1643389.jpeg?auto=compress&cs=tinysrgb&w=800" alt="img"></a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="side-menu-bottom">
+                    <div class="side-menu-contact">
+                        <ul class="side-menu-list">
+                            <li>123 Đường Kiến Trúc, Quận 1, TP. Hồ Chí Minh</li>
+                            <li><a href="tel:0123456789">0123 456 789</a></li>
+                            <li><a class="mail" href="mailto:info@zenithhouse.vn">info@zenithhouse.vn</a></li>
+                        </ul>
+                    </div>
+                    <ul class="side-menu-social" style="margin-top: 20px;">
+                        <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
+                        <li><a href="#"><i class="fab fa-instagram"></i></a></li>
+                        <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+                        <li><a href="#"><i class="fab fa-linkedin-in"></i></a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div id="zenith-smooth-wrapper">
+            <div id="zenith-smooth-content">
+
+            <!-- Editorial Hero Section -->
+            <section class="villa-hero-editorial">
+                <div class="hero-bg-container">
+                    <div class="hero-bg-image"></div>
+                </div>
+                <div class="hero-overlay-editorial"></div>
+                <div class="hero-content-editorial">
+                    <span class="label">Royal Villas Collection</span>
+                    <div class="hero-line"></div>
+                    <h1 class="cursor-effect">
+                        Architectural<br>
+                        <span>Masterpiece</span>
+                    </h1>
+                    <p class="hero-description">Biểu tượng của sự thịnh vượng và gu thẩm mỹ đỉnh cao. Mỗi căn biệt thự là một tác phẩm độc bản, được chế tác tỉ mỉ để tôn vinh vị thế của chủ nhân.</p>
+                    <div class="hero-btns-wrap" style="display: flex; gap: 20px;">
+                        <a href="#collection" class="tl-primary-btn" style="background: var(--zenith-gold); color: #000; border: none; padding: 15px 35px; border-radius: 0;">Khám Phá Dự Án</a>
+                        <a href="contact.html" class="tl-primary-btn" style="background: transparent; border: 1px solid #fff; color: #fff; padding: 15px 35px; border-radius: 0;">Tư Vấn Riêng</a>
+                    </div>
+                </div>
+            </section>
+
+
+            <!-- Standards Section -->
+            <section class="standards-section">
+                <div class="container">
+                    <div class="row g-4">
+                        <div class="col-lg-4">
+                            <div class="standard-card">
+                                <span class="num">01</span>
+                                <h3>Vật liệu Quý hiếm</h3>
+                                <p>Sử dụng đá Marble Carrara, gỗ óc chó nhập khẩu và các kim loại mạ vàng cao cấp để tạo nên sự sang trọng vĩnh cửu.</p>
+                            </div>
+                        </div>
+                        <div class="col-lg-4">
+                            <div class="standard-card">
+                                <span class="num">02</span>
+                                <h3>Smart Luxury</h3>
+                                <p>Hệ thống quản trị thông minh chuẩn quốc tế, mang lại trải nghiệm sống tiện nghi, an toàn và hoàn toàn tự động.</p>
+                            </div>
+                        </div>
+                        <div class="col-lg-4">
+                            <div class="standard-card">
+                                <span class="num">03</span>
+                                <h3>Landscape Art</h3>
+                                <p>Thiết kế cảnh quan sân vườn và hồ bơi vô cực, tạo nên hệ sinh thái xanh nghỉ dưỡng ngay trong lòng tổ ấm.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Collection Showcase -->
+            <section id="collection" class="collection-section">
+                <div class="container">
+                    <div class="section-header text-center mb-50">
+                        <span style="color: var(--zenith-gold); letter-spacing: 8px; text-transform: uppercase; font-size: 11px; font-weight: 700; display: block; margin-bottom: 20px;">Portfolios</span>
+                        <h2 class="cursor-effect" style="color: #fff; font-size: 56px; font-weight: 200; text-transform: uppercase; letter-spacing: 10px;">Dự Án <span style="color: var(--zenith-gold); font-weight: 900;">Biệt Thự</span></h2>
+                        <div style="width: 60px; height: 1px; background: var(--zenith-gold); margin: 30px auto;"></div>
+                    </div>
+                    <div class="row g-3">
+                        <!-- Project 1 -->
+                        <div class="col-lg-4 col-md-6">
+                            <div class="editorial-gallery-item zenith-hover-view">
+                                <img src="https://images.unsplash.com/photo-1613490493576-7fde63acd811?q=80&w=1200&auto=format&fit=crop" alt="Villa">
+                                <div class="gallery-info">
+                                    <span>Quận 2, TP.HCM</span>
+                                    <h4>Biệt Thự Chân Trời</h4>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Project 2 -->
+                        <div class="col-lg-4 col-md-6">
+                            <div class="editorial-gallery-item zenith-hover-view">
+                                <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=1200&auto=format&fit=crop" alt="Villa">
+                                <div class="gallery-info">
+                                    <span>Quận 7, TP.HCM</span>
+                                    <h4>Dinh Thự Zenith</h4>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Project 3 -->
+                        <div class="col-lg-4 col-md-6">
+                            <div class="editorial-gallery-item zenith-hover-view">
+                                <img src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?q=80&w=1200&auto=format&fit=crop" alt="Villa">
+                                <div class="gallery-info">
+                                    <span>Thủ Đức, TP.HCM</span>
+                                    <h4>Biệt Thự Bạch Liên</h4>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Project 4 -->
+                        <div class="col-lg-4 col-md-6">
+                            <div class="editorial-gallery-item zenith-hover-view">
+                                <img src="https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?q=80&w=1200&auto=format&fit=crop" alt="Villa">
+                                <div class="gallery-info">
+                                    <span>Đà Lạt, Lâm Đồng</span>
+                                    <h4>Dinh Thự Đồi Thông</h4>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Project 5 -->
+                        <div class="col-lg-4 col-md-6">
+                            <div class="editorial-gallery-item zenith-hover-view">
+                                <img src="https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?q=80&w=1200&auto=format&fit=crop" alt="Villa">
+                                <div class="gallery-info">
+                                    <span>Quận 9, TP.HCM</span>
+                                    <h4>Biệt Thự Ánh Dương</h4>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Project 6 -->
+                        <div class="col-lg-4 col-md-6">
+                            <div class="editorial-gallery-item zenith-hover-view">
+                                <img src="https://images.unsplash.com/photo-1580587771525-78b9dba3b914?q=80&w=1200&auto=format&fit=crop" alt="Villa">
+                                <div class="gallery-info">
+                                    <span>Quận 2, TP.HCM</span>
+                                    <h4>Dinh Thự Hoàng Gia</h4>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Consultation Section -->
+            <section class="consultation-section">
+                <div class="container">
+                    <div class="consultation-card shadow-lg">
+                        <div class="row g-0">
+                            <div class="col-lg-5 d-none d-lg-block">
+                                <div class="consultation-img" style="background-image: url('assets/img/service/consultation_bg.png');">
+                                    <div class="img-overlay">
+                                        <div class="overlay-content">
+                                            <h3>Zenith House</h3>
+                                            <p>Kiến tạo không gian sống thượng lưu.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-7">
+                                <div class="form-wrapper">
+                                    <div class="form-header">
+                                        <h4 class="sub">Cùng tạo nên di sản của bạn</h4>
+                                        <h2 class="title">Nhận Tư Vấn Ngay</h2>
+                                    </div>
+                                    <form action="#" class="luxury-contact-form">
+                                        <div class="row g-3">
+                                            <div class="col-12">
+                                                <input type="text" class="form-control" placeholder="Họ và tên (*)" required>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <input type="text" class="form-control" placeholder="SĐT (*)" required>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <input type="email" class="form-control" placeholder="Email liên hệ (*)" required>
+                                            </div>
+                                            <div class="col-12">
+                                                <select class="form-select" required>
+                                                    <option value="" selected disabled>Dịch Vụ cần tư vấn (*)</option>
+                                                    <option>Thiết kế kiến trúc</option>
+                                                    <option>Thiết kế & Thi công nội thất</option>
+                                                    <option>Thi công phần thô</option>
+                                                    <option>Xây nhà trọn gói</option>
+                                                </select>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <input type="text" class="form-control" placeholder="Địa phương xây dựng (*)" required>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <select class="form-select" required>
+                                                    <option value="" selected disabled>Loại hình xây dựng (*)</option>
+                                                    <option>Biệt thự</option>
+                                                    <option>Nhà phố</option>
+                                                    <option>Căn hộ cao cấp</option>
+                                                </select>
+                                            </div>
+                                            <div class="col-12">
+                                                <input type="text" class="form-control" placeholder="Diện tích sàn & số tầng (*)" required>
+                                            </div>
+                                            <div class="col-12">
+                                                <label class="budget-label">NGÂN SÁCH DỰ KIẾN (*)</label>
+                                                <div class="budget-radios">
+                                                    <label class="radio-item"><input type="radio" name="budget" checked><span class="checkmark"></span> 1.8 - 2.3 tỷ</label>
+                                                    <label class="radio-item"><input type="radio" name="budget"><span class="checkmark"></span> 2.4 - 2.9 tỷ</label>
+                                                    <label class="radio-item"><input type="radio" name="budget"><span class="checkmark"></span> 3 - 3.5 tỷ</label>
+                                                    <label class="radio-item"><input type="radio" name="budget"><span class="checkmark"></span> > 3.5 tỷ</label>
+                                                </div>
+                                            </div>
+                                            <div class="col-12">
+                                                <textarea class="form-control" rows="2" placeholder="Yêu cầu chi tiết nếu có!"></textarea>
+                                            </div>
+                                            <div class="col-12 text-center mt-2">
+                                                <button type="submit" class="submit-luxury-btn">GỬI YÊU CẦU</button>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Footer Section -->
+            <footer class="footer-section footer-immersive overflow-hidden">
+                <div class="footer-bg" style="background-image: url('assets/img/service/luxury_interior_footer_bg.png') !important; opacity: 0.5 !important;"></div>
+                <div class="footer-shade"></div>
+                <div class="bg-text" style="color: rgba(255, 255, 255, 0.05);">Zenith <br> House</div>
+                
+                <div class="container container-2">
+                    <div class="row footer-wrap" style="position: relative; z-index: 5;">
+                        <div class="col-lg-3 col-md-6">
+                            <div class="footer-widget">
+                                <div class="widget-header">
+                                    <div class="footer-logo">
+                                        <a href="index.html"><img src="assets/img/logo/zenith-logo.png" alt="logo"></a>
+                                    </div>
+                                </div>
+                                <p class="mb-10" style="color: rgba(255,255,255,0.7);">Chúng tôi biến tầm nhìn của bạn thành những <br> không gian được chế tác tinh xảo.</p>
+                                <p class="mb-0" style="color: rgba(255,255,255,0.7);">123 Đường Kiến Trúc, Quận 1, <br> TP. Hồ Chí Minh, Việt Nam</p>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-md-6">
+                            <div class="footer-widget footer-col-2">
+                                <ul class="footer-list">
+                                    <li><a href="about.html">Về chúng tôi</a></li>
+                                    <li><a href="service.html">Dịch vụ</a></li>
+                                    <li><a href="contact.html">Tuyển dụng</a></li>
+                                    <li><a href="team.html">Đội ngũ</a></li>
+                                    <li><a href="cam-nang.html">Cẩm Nang</a></li>
+                                    <li><a href="pricing.html">Báo Giá</a></li>
+                                    <li><a href="contact.html">Liên hệ</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-md-6">
+                            <div class="footer-widget footer-col-2 pl-0">
+                                <ul class="footer-list">
+                                    <li><a href="javascript:void(0);">Dự Án của chúng tôi</a></li>
+                                    <li><a href="contact.html">Đối tác</a></li>
+                                    <li><a href="contact.html">Chương trình đối tác</a></li>
+                                    <li><a href="contact.html">Chương trình liên kết</a></li>
+                                    <li><a href="contact.html">Điều khoản & Điều kiện</a></li>
+                                    <li><a href="contact.html">Trung tâm hỗ trợ</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-md-6">
+                            <div class="footer-widget">
+                                <div class="footer-address">
+                                    <a class="number" href="tel:0123456789" style="color: #fff; font-size: 24px; font-weight: 700; text-decoration: none;">0123 456 789</a>
+                                    <a class="mail" href="mailto:info@zenithhouse.vn" style="color: rgba(255,255,255,0.7); text-decoration: none;">info@zenithhouse.vn</a>
+                                    <ul class="social-list" style="margin-top: 20px;">
+                                        <li><a href="javascript:void(0);">Facebook</a></li>
+                                        <li><a href="javascript:void(0);">Instagram</a></li>
+                                        <li><a href="javascript:void(0);">YouTube</a></li>
+                                        <li><a href="javascript:void(0);">Twitter</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="copyright-area" style="position: relative; z-index: 5; background: transparent; border-top: 1px solid rgba(255,255,255,0.1);">
+                    <div class="container">
+                        <div class="copyright-content text-center">
+                            <p style="color: rgba(255,255,255,0.4);">© 2025 Zenith House. Đã đăng ký bản quyền.</p>
+                        </div>
+                    </div>
+                </div>
+            </footer>
+
+            </div>
+        </div>
+
+        <div id="scroll-percentage"><span id="scroll-percentage-value"></span></div>
+
+        <!-- JS here -->
+        <script src="assets/js/vendor/jquary-3.7.1.min.js"></script>
+        <script src="assets/js/vendor/bootstrap-bundle.js"></script>
+        <script src="assets/js/vendor/imagesloaded-pkgd.js"></script>
+        <script src="assets/js/vendor/waypoints.min.js"></script>
+        <script src="assets/js/vendor/venobox.min.js"></script>
+        <script src="assets/js/vendor/odometer.min.js"></script>
+        <script src="assets/js/vendor/meanmenu.js"></script>
+        <script src="assets/js/vendor/jquery.isotope.js"></script>
+        <script src="assets/js/vendor/swiper.min.js"></script>
+        <script src="assets/js/vendor/split-type.min.js"></script>
+        <script src="assets/js/vendor/gsap.min.js"></script>
+        <script src="assets/js/vendor/scroll-trigger.min.js"></script>
+        <script src="assets/js/vendor/scroll-smoother.js"></script>
+        <script src="assets/js/main.js"></script>
+    </body>
+</html>

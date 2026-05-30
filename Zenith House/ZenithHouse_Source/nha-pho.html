@@ -1,0 +1,820 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="Thiết kế và thi công nhà phố hiện đại, tối ưu không gian tại Zenith House.">
+
+        <!-- Site Title -->
+        <title>Nhà Phố Hiện Đại - Zenith House</title>
+
+        <!-- Place favicon.ico in the root directory -->
+        <link rel="shortcut icon" type="image/x-icon" href="assets/img/favicon.png">
+
+        <!-- CSS here -->
+        <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+        <link rel="stylesheet" href="assets/css/fontawesome.min.css">
+        <link rel="stylesheet" href="assets/css/venobox.min.css">
+        <link rel="stylesheet" href="assets/css/odometer.min.css">
+        <link rel="stylesheet" href="assets/css/nice-select.css">
+        <link rel="stylesheet" href="assets/css/carouselTicker.css">
+        <link rel="stylesheet" href="assets/css/animation.css">
+        <link rel="stylesheet" href="assets/css/swiper.min.css">
+        <link rel="stylesheet" href="assets/css/main.css">
+    <link rel="stylesheet" href="assets/css/header-compact.css">
+        <link rel="stylesheet" href="assets/css/nav-dropdown.css">
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+        
+        <style>
+            :root {
+                --zenith-gold: #C8A97E;
+                --dark-luxury: #0a0a0a;
+                --white-30: rgba(255, 255, 255, 0.3);
+            }
+
+            body { background: #000; color: #fff; font-family: 'Montserrat', sans-serif; }
+            
+
+
+            .urban-hero {
+                height: 100vh;
+                background: #000;
+                position: relative;
+                overflow: hidden;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+
+            .hero-bg-zoom {
+                position: absolute;
+                top: 0; left: 0; width: 100%; height: 100%;
+                background-image: url('https://images.unsplash.com/photo-1512917774080-9991f1c4c750?q=80&w=2000&auto=format&fit=crop');
+                background-size: cover;
+                background-position: center;
+                animation: kenBurns 20s infinite alternate;
+                z-index: 1;
+            }
+
+            @keyframes kenBurns {
+                0% { transform: scale(1); }
+                100% { transform: scale(1.15); }
+            }
+
+            .hero-overlay {
+                position: absolute;
+                top: 0; left: 0; width: 100%; height: 100%;
+                background: radial-gradient(circle at center, rgba(0,0,0,0.2) 0%, rgba(0,0,0,0.8) 100%);
+                z-index: 2;
+            }
+
+            .hero-content-luxury {
+                position: relative;
+                z-index: 10;
+                text-align: center;
+                max-width: 1000px;
+                padding: 50px;
+                background: rgba(255, 255, 255, 0.03);
+                backdrop-filter: blur(10px);
+                border: 1px solid rgba(255, 255, 255, 0.1);
+                border-radius: 2px;
+            }
+
+            .hero-content-luxury .tag {
+                font-size: 10px;
+                text-transform: uppercase;
+                letter-spacing: 12px;
+                color: var(--zenith-gold);
+                margin-bottom: 25px;
+                display: block;
+                animation: fadeInDown 1.5s ease forwards;
+            }
+
+            .hero-content-luxury h1 {
+                font-size: clamp(40px, 8vw, 100px);
+                font-weight: 900;
+                color: #fff;
+                line-height: 0.8;
+                margin-bottom: 30px;
+                text-transform: uppercase;
+                perspective: 1000px;
+            }
+
+            .hero-content-luxury h1 span {
+                display: block;
+                overflow: hidden;
+            }
+
+            .hero-content-luxury h1 b {
+                display: inline-block;
+                transform: translateY(100%);
+                animation: revealText 1.2s cubic-bezier(0.77, 0, 0.175, 1) forwards;
+            }
+
+            .hero-content-luxury h1 .delay-1 { animation-delay: 0.3s; }
+            .hero-content-luxury h1 .delay-2 { animation-delay: 0.6s; font-weight: 100; color: var(--zenith-gold); letter-spacing: 10px; font-size: 0.5em; margin-top: 10px; }
+
+            @keyframes revealText {
+                to { transform: translateY(0); }
+            }
+
+            .hero-content-luxury p {
+                font-size: 16px;
+                color: rgba(255,255,255,0.7);
+                line-height: 1.8;
+                max-width: 600px;
+                margin: 0 auto 40px;
+                font-weight: 300;
+                opacity: 0;
+                animation: fadeIn 1.5s ease forwards 1.2s;
+            }
+
+            .hero-btns {
+                display: flex;
+                justify-content: center;
+                gap: 30px;
+                opacity: 0;
+                animation: fadeInUp 1s ease forwards 1.5s;
+            }
+
+            .btn-luxury-outline {
+                padding: 15px 40px;
+                border: 1px solid var(--zenith-gold);
+                color: #fff;
+                text-decoration: none;
+                font-size: 11px;
+                text-transform: uppercase;
+                letter-spacing: 4px;
+                font-weight: 700;
+                transition: 0.5s;
+                position: relative;
+                overflow: hidden;
+            }
+
+            .btn-luxury-outline::before {
+                content: '';
+                position: absolute;
+                top: 0; left: -100%; width: 100%; height: 100%;
+                background: var(--zenith-gold);
+                transition: 0.5s;
+                z-index: -1;
+            }
+
+            .btn-luxury-outline:hover { color: #000; }
+            .btn-luxury-outline:hover::before { left: 0; }
+
+            .scroll-mouse {
+                position: absolute;
+                bottom: 40px;
+                left: 50%;
+                transform: translateX(-50%);
+                z-index: 10;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                gap: 15px;
+            }
+
+            .mouse-icon {
+                width: 20px;
+                height: 35px;
+                border: 2px solid rgba(255,255,255,0.3);
+                border-radius: 10px;
+                position: relative;
+            }
+
+            .mouse-icon::after {
+                content: '';
+                position: absolute;
+                top: 5px; left: 50%; width: 2px; height: 5px;
+                background: #fff;
+                transform: translateX(-50%);
+                animation: scrollMouse 2s infinite;
+            }
+
+            @keyframes scrollMouse {
+                0% { opacity: 1; top: 5px; }
+                100% { opacity: 0; top: 20px; }
+            }
+
+            @keyframes fadeInDown {
+                from { opacity: 0; transform: translateY(-20px); }
+                to { opacity: 1; transform: translateY(0); }
+            }
+            @keyframes fadeInUp {
+                from { opacity: 0; transform: translateY(20px); }
+                to { opacity: 1; transform: translateY(0); }
+            }
+            @keyframes fadeIn {
+                to { opacity: 1; }
+            }
+
+            .scroll-indicator {
+                position: absolute;
+                bottom: 50px;
+                left: 50%;
+                transform: translateX(-50%);
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                gap: 15px;
+                opacity: 0.5;
+            }
+            .scroll-indicator .mouse {
+                width: 25px;
+                height: 40px;
+                border: 2px solid #fff;
+                border-radius: 15px;
+                position: relative;
+            }
+            .scroll-indicator .mouse::after {
+                content: '';
+                position: absolute;
+                top: 10px; left: 50%; width: 2px; height: 8px;
+                background: #fff;
+                transform: translateX(-50%);
+                animation: scrollAnim 2s infinite;
+            }
+            @keyframes scrollAnim {
+                0% { opacity: 1; top: 10px; }
+                100% { opacity: 0; top: 25px; }
+            }
+
+            .urban-card {
+                background: #0f0f0f;
+                border: 1px solid rgba(255,255,255,0.05);
+                padding: 60px 45px;
+                transition: 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+                position: relative;
+                overflow: hidden;
+                height: 100%;
+                border-radius: 4px;
+            }
+
+            .urban-card::before {
+                content: '';
+                position: absolute;
+                top: 0; left: 0; width: 100%; height: 100%;
+                background: linear-gradient(45deg, transparent, rgba(200, 169, 126, 0.05), transparent);
+                transform: translateX(-100%);
+                transition: 0.8s;
+            }
+
+            .urban-card:hover::before { transform: translateX(100%); }
+
+            .urban-card .icon {
+                font-size: 50px;
+                color: var(--zenith-gold);
+                margin-bottom: 30px;
+                display: inline-block;
+                transition: 0.5s;
+            }
+
+            .urban-card:hover .icon { transform: scale(1.1) rotate(5deg); }
+
+            .urban-card h3 {
+                color: #fff;
+                margin-bottom: 20px;
+                font-size: 24px;
+                font-weight: 700;
+                text-transform: uppercase;
+                letter-spacing: 2px;
+            }
+
+            .urban-card p {
+                color: rgba(255,255,255,0.5);
+                line-height: 1.8;
+                margin-bottom: 0;
+                font-size: 15px;
+            }
+
+            /* Project Grid */
+            .project-grid-item {
+                position: relative;
+                overflow: hidden;
+                aspect-ratio: 16/10;
+                margin-bottom: 24px;
+                border-radius: 8px;
+            }
+
+            .project-grid-item img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                transition: 1.5s cubic-bezier(0.2, 1, 0.3, 1);
+            }
+
+            .project-grid-item:hover img { transform: scale(1.15); }
+
+            .project-overlay {
+                position: absolute;
+                top: 0; left: 0; width: 100%; height: 100%;
+                background: linear-gradient(0deg, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0.3) 50%, transparent 100%);
+                display: flex;
+                flex-direction: column;
+                justify-content: flex-end;
+                padding: 40px;
+                opacity: 0.8;
+                transition: 0.5s;
+            }
+
+            .project-grid-item:hover .project-overlay {
+                background: linear-gradient(0deg, rgba(0,0,0,1) 0%, rgba(0,0,0,0.5) 60%, transparent 100%);
+                opacity: 1;
+            }
+
+            .project-overlay h4 {
+                color: #fff;
+                font-size: 28px;
+                font-weight: 300;
+                letter-spacing: 1px;
+                text-transform: none;
+                margin-bottom: 5px;
+                transform: translateY(10px);
+                transition: 0.5s;
+            }
+
+            .project-overlay span {
+                color: rgba(255,255,255,0.4);
+                font-size: 11px;
+                letter-spacing: 5px;
+                text-transform: uppercase;
+                font-weight: 500;
+                transform: translateY(10px);
+                transition: 0.5s 0.1s;
+                display: block;
+                margin-bottom: 5px;
+            }
+
+            .project-grid-item:hover h4, 
+            .project-grid-item:hover span { transform: translateY(0); }
+
+            /* Consultation Section Sync with service.html */
+            .consultation-section { 
+                background: #fdfdfd; 
+                min-height: 100vh; 
+                display: flex; 
+                align-items: center; 
+                padding: 40px 0;
+            }
+            .consultation-card { background: #fff; border-radius: 20px; overflow: hidden; border: 1px solid rgba(0,0,0,0.05); width: 100%; max-width: 1100px; margin: 0 auto; }
+            .consultation-img { height: 100%; background-size: cover; background-position: center; position: relative; min-height: 650px; }
+            .img-overlay { position: absolute; bottom: 0; left: 0; width: 100%; padding: 40px; background: linear-gradient(0deg, rgba(0,0,0,0.9) 0%, transparent 100%); color: #fff; }
+            .img-overlay h3 { font-size: 32px; font-weight: 800; color: #C8A97E; margin-bottom: 5px; }
+            .form-wrapper { padding: 40px 50px; }
+            .form-header { margin-bottom: 25px; text-align: center; }
+            .form-header .sub { font-size: 10px; text-transform: uppercase; letter-spacing: 3px; color: #C8A97E; margin-bottom: 8px; }
+            .form-header .title { font-size: 32px; font-weight: 700; color: #222; }
+            
+            .luxury-contact-form .form-control, 
+            .luxury-contact-form .form-select { 
+                border: 1px solid #f0f0f0 !important; 
+                border-radius: 8px !important; 
+                padding: 12px 18px !important; 
+                font-size: 14px !important;
+                background: #fcfcfc !important;
+                color: #222 !important;
+                transition: all 0.3s ease;
+            }
+            .luxury-contact-form .form-control:focus { border-color: #C8A97E !important; box-shadow: 0 5px 15px rgba(200,169,126,0.1) !important; }
+            .luxury-contact-form ::placeholder { color: #999; }
+            
+            .budget-label { font-size: 11px; font-weight: 700; color: #222; margin-bottom: 10px; display: block; text-transform: uppercase; letter-spacing: 1px; }
+            .budget-radios { display: flex; flex-wrap: wrap; gap: 15px; }
+            .radio-item { position: relative; padding-left: 24px; cursor: pointer; font-size: 13px; color: #666; user-select: none; }
+            .radio-item input { position: absolute; opacity: 0; cursor: pointer; }
+            .checkmark { position: absolute; top: 1px; left: 0; height: 16px; width: 16px; background-color: #eee; border-radius: 50%; }
+            .radio-item input:checked ~ .checkmark { background-color: #C8A97E; }
+            
+            .submit-luxury-btn { 
+                background: #C8A97E; 
+                color: #fff; 
+                border: none; 
+                padding: 15px 45px; 
+                border-radius: 50px; 
+                font-weight: 700; 
+                font-size: 14px; 
+                letter-spacing: 1.5px; 
+                transition: all 0.4s ease; 
+                box-shadow: 0 8px 20px rgba(200,169,126,0.25);
+                width: auto;
+                margin-top: 10px;
+            }
+            .submit-luxury-btn:hover { background: #222; transform: translateY(-2px); box-shadow: 0 12px 25px rgba(0,0,0,0.15); }
+
+            /* Immersive Footer Fixes */
+            .footer-section.footer-immersive {
+                position: relative !important;
+                background-color: #000 !important;
+                padding: 150px 0 100px !important;
+                overflow: hidden !important;
+                min-height: 100vh !important;
+                display: flex !important;
+                flex-direction: column !important;
+                justify-content: flex-end !important;
+            }
+            .footer-bg { position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 1; pointer-events: none; opacity: 0.5; }
+            .footer-shade { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(0deg, #000 20%, transparent 100%); z-index: 2; }
+            .footer-section.footer-immersive .bg-text {
+                position: absolute !important;
+                bottom: 0% !important;
+                left: 50% !important;
+                transform: translateX(-50%) !important;
+                font-size: clamp(100px, 32vw, 520px) !important;
+                font-weight: 900 !important;
+                color: rgba(255, 255, 255, 0.05) !important;
+                z-index: 0 !important;
+                pointer-events: none !important;
+                text-transform: uppercase !important;
+                line-height: 0.65 !important;
+                text-align: center !important;
+                letter-spacing: -15px !important;
+                width: 100% !important;
+                display: flex !important;
+                flex-direction: column !important;
+                align-items: center !important;
+            }
+            .footer-section.footer-immersive .container-2 {
+                position: relative !important;
+                z-index: 5 !important;
+            }
+        </style>
+    </head>
+
+    <body>
+
+        <!-- header-area-start -->
+        <header class="header sticky-active">
+            <div class="primary-header">
+                <div class="container">
+                    <div class="primary-header-inner">
+                        <div class="header-left-wrap">
+                            <div class="header-logo d-lg-block">
+                                <a href="index.html">
+                                    <img src="assets/img/logo/zenith-logo.png" alt="logo">
+                                </a>
+                            </div>
+                            <div class="header-menu-wrap">
+                                <div class="mobile-menu-items">
+                                    <ul>
+                                        <li class="has-submenu">
+                                            <a href="index.html">Trang Chủ <i class="fa-solid fa-chevron-down"></i></a>
+                                            <ul class="submenu">
+                                                <li><a href="about.html">Về chúng tôi</a></li>
+                                                <li><a href="contact.html">Liên hệ</a></li>
+                                            </ul>
+                                        </li>
+                                        <li class="has-submenu">
+                                            <a href="service.html">Dịch Vụ <i class="fa-solid fa-chevron-down"></i></a>
+                                            <ul class="submenu">
+                                                <li><a href="thiet-ke-kien-truc.html">Thiết kế kiến trúc</a></li>
+                                                <li><a href="thiet-ke-noi-that.html">Thiết kế & Thi công nội thất</a></li>
+                                                <li><a href="thi-cong-phan-tho.html">Thi công phần thô</a></li>
+                                                <li><a href="xay-nha-tron-goi.html">Xây nhà trọn gói</a></li>
+                                            </ul>
+                                        </li>
+                                        <li class="has-submenu active">
+                                            <a href="portfolio.html">Dự Án <i class="fa-solid fa-chevron-down"></i></a>
+                                            <ul class="submenu">
+                                                <li class="active"><a href="nha-pho.html">Nhà Phố</a></li>
+                                                <li><a href="biet-thu.html">Biệt Thự</a></li>
+                                                <li><a href="can-ho.html">Căn Hộ</a></li>
+                                            </ul>
+                                        </li>
+                                    <li>
+                                        <a href="pricing.html">Báo Giá</a>
+                                    </li>
+                                        
+                                        <li class="has-submenu ">
+                                            <a href="cam-nang.html">Cẩm Nang <i class="fa-solid fa-chevron-down"></i></a>
+                                            <ul class="submenu">
+                                                <li><a href="kien-thuc-xay-nha.html">Kiến Thức Xây Nhà</a></li>
+                                                <li><a href="kien-thuc-phong-thuy.html">Kiến Thức Phong Thủy</a></li>
+                                            </ul>
+                                        </li>
+                                        
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="header-right-wrap">
+                            <a href="tel:0123456789" class="header-contact">
+                                <span class="icon"><i class="fa-regular fa-phone"></i></span>
+                                <span class="content">
+                                    <span class="call-text">Hotline liên hệ</span>
+                                    <span class="call-number">0123 456 789</span>
+                                </span>
+                            </a>
+                            <div class="header-btn-wrap">
+                                <a href="contact.html" class="tl-primary-btn header-btn">Nhận Tư Vấn</a>
+                            </div>
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <div id="zenith-smooth-wrapper">
+            <div id="zenith-smooth-content">
+
+            <section class="urban-hero">
+                <div class="hero-bg-zoom"></div>
+                <div class="hero-overlay"></div>
+                <div class="hero-content-luxury">
+                    <span class="tag">MODERN TOWNHOUSES COLLECTION</span>
+                    <h1>
+                        <span><b class="delay-1">Town</b></span>
+                        <span><b class="delay-2">House Collection</b></span>
+                    </h1>
+                    <p>Kiến tạo không gian sống đô thị hiện đại, tối ưu hóa diện tích nhưng vẫn giữ trọn vẻ đẹp kiến trúc độc bản và cá tính gia chủ.</p>
+                    <div class="hero-btns">
+                        <a href="#showcase" class="btn-luxury-outline">Xem Dự Án</a>
+                        <a href="contact.html" class="btn-luxury-outline" style="background: var(--zenith-gold); color: #000;">Nhận Tư Vấn</a>
+                    </div>
+                </div>
+                <div class="scroll-mouse">
+                    <div class="mouse-icon"></div>
+                    <span style="font-size: 9px; text-transform: uppercase; letter-spacing: 5px; color: #fff; opacity: 0.5;">Explore</span>
+                </div>
+            </section>
+
+            <section class="pt-80 pb-80" style="background: var(--dark-luxury);">
+                <div class="container">
+                    <div class="row g-4">
+                        <div class="col-lg-4">
+                            <div class="urban-card">
+                                <div class="icon"><i class="fa-light fa-city"></i></div>
+                                <h3>Smart Space</h3>
+                                <p>Giải pháp xử lý không gian thông minh cho nhà phố, xóa bỏ cảm giác bí bách, mang ánh sáng tự nhiên vào từng ngóc ngách.</p>
+                            </div>
+                        </div>
+                        <div class="col-lg-4">
+                            <div class="urban-card">
+                                <div class="icon"><i class="fa-light fa-compass-drafting"></i></div>
+                                <h3>Modern Soul</h3>
+                                <p>Ngôn ngữ thiết kế đương đại, kết hợp hài hòa giữa các vật liệu cao cấp như đá, gỗ và kim loại.</p>
+                            </div>
+                        </div>
+                        <div class="col-lg-4">
+                            <div class="urban-card">
+                                <div class="icon"><i class="fa-light fa-leaf"></i></div>
+                                <h3>Green Urban</h3>
+                                <p>Tích hợp hệ sinh thái xanh vào công trình, tạo nên những khoảng thở quý giá giữa lòng thành phố nhộn nhịp.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Expanded Showcase Section -->
+            <section id="showcase" class="pt-80 pb-80" style="background: #050505;">
+                <div class="container">
+                    <div class="section-header text-center mb-50">
+                        <span style="color: var(--zenith-gold); letter-spacing: 8px; text-transform: uppercase; font-size: 11px; font-weight: 700; display: block; margin-bottom: 20px;">Portfolios</span>
+                        <h2 class="cursor-effect" style="color: #fff; font-size: 56px; font-weight: 200; text-transform: uppercase; letter-spacing: 10px;">Dự Án <span style="color: var(--zenith-gold); font-weight: 900;">Nhà Phố</span></h2>
+                        <div style="width: 60px; height: 1px; background: var(--zenith-gold); margin: 30px auto;"></div>
+                    </div>
+                    <div class="row">
+                        <!-- Project 1 -->
+                        <div class="col-md-4">
+                            <div class="project-grid-item zenith-hover-view">
+                                <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=1200&auto=format&fit=crop" alt="The Urban Oasis">
+                                <div class="project-overlay">
+                                    <span>Quận 2, TP.HCM</span>
+                                    <h4>Ốc Đảo Đô Thị</h4>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Project 2 -->
+                        <div class="col-md-4">
+                            <div class="project-grid-item zenith-hover-view">
+                                <img src="https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?q=80&w=1200&auto=format&fit=crop" alt="Minimalist House">
+                                <div class="project-overlay">
+                                    <span>Quận 7, TP.HCM</span>
+                                    <h4>Nhà Phố Tối Giản</h4>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Project 3 -->
+                        <div class="col-md-4">
+                            <div class="project-grid-item zenith-hover-view">
+                                <img src="https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?q=80&w=1200&auto=format&fit=crop" alt="Corner House">
+                                <div class="project-overlay">
+                                    <span>Bình Thạnh, TP.HCM</span>
+                                    <h4>Nhà Phố Góc Phố</h4>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Project 4 -->
+                        <div class="col-md-4">
+                            <div class="project-grid-item zenith-hover-view">
+                                <img src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?q=80&w=1200&auto=format&fit=crop" alt="Green Terrace">
+                                <div class="project-overlay">
+                                    <span>Thủ Đức, TP.HCM</span>
+                                    <h4>Ban Công Xanh</h4>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Project 5 -->
+                        <div class="col-md-4">
+                            <div class="project-grid-item zenith-hover-view">
+                                <img src="https://images.unsplash.com/photo-1600573472591-ee6b68d14c68?q=80&w=1200&auto=format&fit=crop" alt="Stone & Wood">
+                                <div class="project-overlay">
+                                    <span>Quận 9, TP.HCM</span>
+                                    <h4>Giao Thoa Đá & Gỗ</h4>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Project 6 -->
+                        <div class="col-md-4">
+                            <div class="project-grid-item zenith-hover-view">
+                                <img src="https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?q=80&w=1200&auto=format&fit=crop" alt="Modern Loft">
+                                <div class="project-overlay">
+                                    <span>Quận 12, TP.HCM</span>
+                                    <h4>Loft Hiện Đại</h4>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="consultation-section">
+                <div class="container">
+                    <div class="consultation-card shadow-lg">
+                        <div class="row g-0">
+                            <div class="col-lg-5 d-none d-lg-block">
+                                <div class="consultation-img" style="background-image: url('assets/img/service/consultation_bg.png');">
+                                    <div class="img-overlay">
+                                        <div class="overlay-content">
+                                            <h3>Zenith House</h3>
+                                            <p>Kiến tạo không gian sống thượng lưu.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-7">
+                                <div class="form-wrapper">
+                                    <div class="form-header">
+                                        <h4 class="sub">Kết nối với chúng tôi</h4>
+                                        <h2 class="title">Nhận Tư Vấn Ngay</h2>
+                                    </div>
+                                    <form action="#" class="luxury-contact-form">
+                                        <div class="row g-3">
+                                            <div class="col-12">
+                                                <input type="text" class="form-control" placeholder="Họ và tên (*)" required>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <input type="text" class="form-control" placeholder="SĐT (*)" required>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <input type="email" class="form-control" placeholder="Email liên hệ (*)" required>
+                                            </div>
+                                            <div class="col-12">
+                                                <select class="form-select" required>
+                                                    <option value="" selected disabled>Dịch Vụ cần tư vấn (*)</option>
+                                                    <option>Thiết kế kiến trúc</option>
+                                                    <option>Thiết kế & Thi công nội thất</option>
+                                                    <option>Thi công phần thô</option>
+                                                    <option>Xây nhà trọn gói</option>
+                                                </select>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <input type="text" class="form-control" placeholder="Địa phương xây dựng (*)" required>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <select class="form-select" required>
+                                                    <option value="" selected disabled>Loại hình xây dựng (*)</option>
+                                                    <option>Biệt thự</option>
+                                                    <option>Nhà phố</option>
+                                                    <option>Căn hộ cao cấp</option>
+                                                </select>
+                                            </div>
+                                            <div class="col-12">
+                                                <input type="text" class="form-control" placeholder="Diện tích sàn & số tầng (*)" required>
+                                            </div>
+                                            <div class="col-12">
+                                                <label class="budget-label">NGÂN SÁCH DỰ KIẾN (*)</label>
+                                                <div class="budget-radios">
+                                                    <label class="radio-item"><input type="radio" name="budget" checked><span class="checkmark"></span> 1.8 - 2.3 tỷ</label>
+                                                    <label class="radio-item"><input type="radio" name="budget"><span class="checkmark"></span> 2.4 - 2.9 tỷ</label>
+                                                    <label class="radio-item"><input type="radio" name="budget"><span class="checkmark"></span> 3 - 3.5 tỷ</label>
+                                                    <label class="radio-item"><input type="radio" name="budget"><span class="checkmark"></span> > 3.5 tỷ</label>
+                                                </div>
+                                            </div>
+                                            <div class="col-12">
+                                                <textarea class="form-control" rows="2" placeholder="Yêu cầu chi tiết nếu có!"></textarea>
+                                            </div>
+                                            <div class="col-12 text-center mt-2">
+                                                <button type="submit" class="submit-luxury-btn">GỬI YÊU CẦU</button>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <footer class="footer-section footer-immersive overflow-hidden">
+                <div class="footer-bg" style="background-image: url('assets/img/service/luxury_interior_footer_bg.png') !important; opacity: 0.5 !important;"></div>
+                <div class="footer-shade"></div>
+                <div class="bg-text" style="color: rgba(255, 255, 255, 0.05);">Zenith <br> House</div>
+                
+                <div class="container container-2">
+                    <div class="row footer-wrap" style="position: relative; z-index: 5;">
+                        <div class="col-lg-3 col-md-6">
+                            <div class="footer-widget">
+                                <div class="widget-header">
+                                    <div class="footer-logo">
+                                        <a href="index.html"><img src="assets/img/logo/zenith-logo.png" alt="logo"></a>
+                                    </div>
+                                </div>
+                                <p class="mb-10" style="color: rgba(255,255,255,0.7);">Chúng tôi biến tầm nhìn của bạn thành những <br> không gian được chế tác tinh xảo.</p>
+                                <p class="mb-0" style="color: rgba(255,255,255,0.7);">123 Đường Kiến Trúc, Quận 1, <br> TP. Hồ Chí Minh, Việt Nam</p>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-md-6">
+                            <div class="footer-widget footer-col-2">
+                                <ul class="footer-list">
+                                    <li><a href="about.html">Về chúng tôi</a></li>
+                                    <li><a href="service.html">Dịch vụ</a></li>
+                                    <li><a href="contact.html">Tuyển dụng</a></li>
+                                    <li><a href="team.html">Đội ngũ</a></li>
+                                    <li><a href="cam-nang.html">Cẩm Nang</a></li>
+                                    <li><a href="pricing.html">Báo Giá</a></li>
+                                    <li><a href="contact.html">Liên hệ</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-md-6">
+                            <div class="footer-widget footer-col-2 pl-0">
+                                <ul class="footer-list">
+                                    <li><a href="javascript:void(0);">Dự Án của chúng tôi</a></li>
+                                    <li><a href="contact.html">Đối tác</a></li>
+                                    <li><a href="contact.html">Chương trình đối tác</a></li>
+                                    <li><a href="contact.html">Chương trình liên kết</a></li>
+                                    <li><a href="contact.html">Điều khoản & Điều kiện</a></li>
+                                    <li><a href="contact.html">Trung tâm hỗ trợ</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-md-6">
+                            <div class="footer-widget">
+                                <div class="footer-address">
+                                    <a class="number" href="tel:0123456789" style="color: #fff; font-size: 24px; font-weight: 700; text-decoration: none;">0123 456 789</a>
+                                    <a class="mail" href="mailto:info@zenithhouse.vn" style="color: rgba(255,255,255,0.7); text-decoration: none;">info@zenithhouse.vn</a>
+                                    <ul class="social-list" style="margin-top: 20px;">
+                                        <li><a href="javascript:void(0);">Facebook</a></li>
+                                        <li><a href="javascript:void(0);">Instagram</a></li>
+                                        <li><a href="javascript:void(0);">YouTube</a></li>
+                                        <li><a href="javascript:void(0);">Twitter</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="copyright-area" style="position: relative; z-index: 5; background: transparent; border-top: 1px solid rgba(255,255,255,0.1);">
+                    <div class="container">
+                        <div class="copyright-content text-center">
+                            <p style="color: rgba(255,255,255,0.4);">© 2025 Zenith House. Đã đăng ký bản quyền.</p>
+                        </div>
+                    </div>
+                </div>
+            </footer>
+
+            </div>
+        </div>
+
+        <div id="scroll-percentage"><span id="scroll-percentage-value"></span></div>
+
+        <!-- JS here -->
+        <script src="assets/js/vendor/jquary-3.7.1.min.js"></script>
+        <script src="assets/js/vendor/bootstrap-bundle.js"></script>
+        <script src="assets/js/vendor/imagesloaded-pkgd.js"></script>
+        <script src="assets/js/vendor/waypoints.min.js"></script>
+        <script src="assets/js/vendor/venobox.min.js"></script>
+        <script src="assets/js/vendor/odometer.min.js"></script>
+        <script src="assets/js/vendor/meanmenu.js"></script>
+        <script src="assets/js/vendor/jquery.isotope.js"></script>
+        <script src="assets/js/vendor/swiper.min.js"></script>
+        <script src="assets/js/vendor/split-type.min.js"></script>
+        <script src="assets/js/vendor/gsap.min.js"></script>
+        <script src="assets/js/vendor/scroll-trigger.min.js"></script>
+        <script src="assets/js/vendor/scroll-smoother.js"></script>
+        <script src="assets/js/vendor/jquery.carouselTicker.js"></script>
+        <script src="assets/js/vendor/nice-select.js"></script>
+        <script src="assets/js/vendor/three.min.js"></script>
+        <script src="assets/js/vendor/panolens.min.js"></script>
+        <script src="assets/js/vendor/jquery.event.move.min.js"></script>
+        <script src="assets/js/vendor/jquery.twentytwenty.min.js"></script>
+        <script src="assets/js/banner-process.js"></script>
+        <script src="assets/js/slider.js"></script>
+        <script src="assets/js/contact.js"></script>
+        <script src="assets/js/main.js"></script>
+    </body>
+</html>

@@ -1,0 +1,284 @@
+@use "../utilities" as *;
+
+/**----------------------------------------
+    START: Home 9 CSS
+----------------------------------------*/
+
+.slider-9{
+    .slider-item{
+        .slider-content-wrap{
+            .bottom-content{
+                @include flex-vertical-center;
+                justify-content: space-between;
+                .antra-desc{
+                    grid-template-columns: 1fr;
+                }
+                .slider-video-area{
+                    background: rgba(243, 243, 243, 0.34);
+                    opacity: 0.95;
+                    border: 1px solid rgba(255, 255, 255, 0.13);
+                    backdrop-filter: blur(29px);
+                    border-radius: 24px;
+                    display: grid;
+                    align-items: center;
+                    grid-template-columns: 1fr 170px;
+                    grid-gap: 20px;
+                    padding: 10px;
+                    padding-left: 30px;
+                    position: relative;
+                    z-index: 2;
+                    @include breakpoint(sm){
+                        grid-template-columns: 1fr;
+                        padding-left: 10px;
+                        padding-top: 30px;
+                        margin: 0 auto;
+                    }
+                    span{
+                        color: var(--tl-color-common-white);
+                        font-family: var(--tl-ff-heading);
+                        font-size: 26px;
+                        font-weight: 400;
+                        display: block;
+                        line-height: 1.3;
+                        br{
+                            display: block;
+                        }
+                    }
+                    .play-btn-wrap{
+                        max-width: 170px;
+                        width: 100%;
+                        height: 130px;
+                        position: relative;
+                        img{
+                            width: 100%;
+                            height: 100%;
+                            object-fit: cover;
+                            border-radius: 10px;
+                        }
+                        .play-btn{
+                            position: absolute;
+                            top: 50%;
+                            left: 50%;
+                            transform: translate(-50%, -50%);
+                            a{
+                                color: var(--tl-color-common-white);
+                                height: 84px;
+                                width: 84px;
+                                @include flex-center;
+                                border: 1px solid var(--tl-color-common-white);
+                                border-radius: 50%;
+                                i{
+                                    background-color: var(--tl-color-common-white);
+                                    color: var(--tl-color-theme-primary);
+                                    height: 70px;
+                                    width: 70px;
+                                    @include flex-center;
+                                    border-radius: 50%;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+// About CSS
+
+.about-section-9{
+    position: relative;
+    z-index: 1;
+    .shape-1{
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        z-index: -1;
+    }
+}
+
+.about-img-9{
+    max-width: 100%;
+    width: 100%;
+    height: 640px;
+    img{
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: 24px;
+    }
+}
+
+.about-content-9{
+    max-width: 1010px;
+    width: 100%;
+    margin: 0 auto;
+    display: grid;
+    align-items: center;
+    grid-template-columns: 460px 1fr;
+    margin-top: 40px;
+    .about-counter{
+        @include flex-vertical-center;
+        align-items: start;
+        column-gap: 20px;
+        .title{
+            font-family: var(--tl-ff-heading);
+            color: var(--tl-color-theme-primary);
+            font-size: 310px;
+            font-weight: 400;
+            line-height: 1;
+            .odometer-auto-theme{
+                line-height: 1;
+                font-family: inherit;
+            }
+        }
+        p{
+            font-family: var(--tl-ff-heading);
+            color: var(--tl-color-heading-primary);
+            font-size: 15px;
+            font-weight: 400;
+            margin-bottom: 0;
+            writing-mode: sideways-lr;
+            text-transform: uppercase;
+            margin-top: 70px;
+            text-align: right;
+        }
+    }
+    .about-desc{
+        border-left: 1px solid var(--tl-color-border-1);
+        padding-left: 50px;
+        p{
+            margin-bottom: 50px;
+        }
+    }
+}
+
+// Service CSS
+
+.service-9{
+    padding-bottom: 425px;
+    position: relative;
+    z-index: 2;
+    overflow-x: clip;
+    @include breakpoint(sm){
+        padding-bottom: 100px;
+    }
+    .service-text{
+        font-family: var(--tl-ff-heading);
+        font-size: 420px;
+        font-weight: 400;
+        line-height: 1;
+        color: #9F9FA4;
+        opacity: 0.13;
+        margin-bottom: 0;
+        position: absolute;
+        bottom: -62px;
+        left: 77px;
+        z-index: -1;
+        @include breakpoint(sm){
+            display: none;
+        }
+    }
+    .service-element{
+        position: absolute;
+        bottom: -22%;
+        right: 57px;
+        @include breakpoint(lg){
+            bottom: -26%;
+        }
+        @include breakpoint(md){
+            bottom: -8%;
+        }
+    }
+}
+
+// Project CSS
+
+.project-wrap-9{
+    @include flex-vertical-center;
+    column-gap: 18px;
+    @include breakpoint(md){
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 24px;
+    }
+    @include breakpoint(sm){
+        grid-template-columns: 1fr;
+    }
+    .project-item-3{
+        &.active{
+            width: 520px;
+            @include breakpoint(xl){
+                width: 420px;
+            }
+            @include breakpoint(lg){
+                width: 350px;
+            }
+            @include breakpoint(md){
+                width: 355px;
+            }
+            @include breakpoint(sm){
+                width: 100%;
+            }
+            .project-img{
+                &:before{
+                    visibility: visible;
+                    opacity: 1;
+                }
+            }
+            .project-content{
+                opacity: 1;
+            }
+        }
+        width: 200px;
+        height: 620px;
+        position: relative;
+        overflow: hidden;
+        border-radius: 24px;
+        flex-shrink: 0;
+        @include transition(all 0.5s ease-in-out);
+        @include breakpoint(xl){
+            width: 170px;
+        }
+        @include breakpoint(lg){
+            width: 145px;
+        }
+        @include breakpoint(md){
+            width: 355px;
+            height: 550px;
+        }
+        @include breakpoint(sm){
+            width: 100%;
+        }
+        .project-img{
+            height: 100%;
+            img{
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+        }
+        .project-content{
+            position: absolute;
+            bottom: 40px;
+            left: 40px;
+            visibility: inherit;
+            opacity: 0;
+            @include transition(all 0.5s ease-in-out);
+            @include breakpoint(lg){
+                left: 20px;
+            }
+            .title{
+                overflow: hidden;
+                text-overflow: ellipsis;
+            }
+        }
+        &:hover{
+            .project-content{
+                opacity: 1;
+            }
+        }
+    }
+}
+
+/* !END: Home 9 CSS */

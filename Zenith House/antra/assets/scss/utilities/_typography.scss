@@ -1,0 +1,42 @@
+// Font URL
+$font-url: "https://fonts.googleapis.com/css2?family=Cal+Sans&family=Golos+Text:wght@400..900&display=swap";
+
+//Font Family
+$font-family: (
+    "ff": (
+        "body": "'Golos Text', sans-serif",
+        "heading": "'Cal Sans', serif",
+        "p": "'Golos Text', sans-serif",
+    ),
+);
+
+// Font Weight
+$font-scale: (
+    "fw": (
+        "normal": normal,
+        "thin": 100,
+        "elight": 200,
+        "light": 300,
+        "regular": 400,
+        "medium": 500,
+        "sbold": 600,
+        "bold": 700,
+        "ebold": 800,
+        "black": 900,
+    ),
+);
+
+// Font Size
+$font-size: (
+    "fs": (
+        "body": 16,
+        "p": 16,
+        "p-bold": 20,
+        "h1": 80,
+        "h2": 60,
+        "h3": 50,
+        "h4": 40,
+        "h5": 30,
+        "h6": 20,
+    ),
+);

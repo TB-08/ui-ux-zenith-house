@@ -1,0 +1,45 @@
+
+/* Hero Section - Remove Dark Overlay and Enhance Visibility */
+.slider-item::before,
+.slider-item::after,
+.bg-img::before,
+.bg-img::after {
+    display: none !important;
+    background: none !important;
+    opacity: 0 !important;
+}
+
+/* Add a very subtle bottom gradient only to ensure text readability if needed */
+.slider-item {
+    position: relative;
+    background-color: #f8f8f8; /* Nền sáng */
+}
+
+/* Ensure the background image is full brightness */
+.bg-img {
+    filter: brightness(1) contrast(1) !important;
+}
+
+/* If there's an overlay div we missed */
+.slider-overlay, .slider-shade, .bg-overlay {
+    display: none !important;
+}
+
+/* Make sure the header is also visible on bright background */
+.header.sticky-active {
+    background: rgba(255, 255, 255, 0.95) !important;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+}
+
+.section-title {
+    text-shadow: 0 2px 10px rgba(0,0,0,0.2);
+}
+
+.sub-heading {
+    text-shadow: 0 1px 5px rgba(0,0,0,0.1);
+}
+
+.slider-desc p {
+    text-shadow: 0 1px 5px rgba(0,0,0,0.1);
+}
+

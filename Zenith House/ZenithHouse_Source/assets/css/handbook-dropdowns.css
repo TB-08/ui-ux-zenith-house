@@ -1,0 +1,179 @@
+
+/* Premium Accordion Styling for Cẩm Nang */
+.premium-accordion-section {
+    background: #0a0a0a;
+    background-image: radial-gradient(circle at 50% 0%, rgba(200, 169, 126, 0.08) 0%, transparent 70%);
+    padding: 100px 0;
+    position: relative;
+    overflow: hidden;
+}
+
+.premium-accordion-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(200, 169, 126, 0.2), transparent);
+}
+
+.accordion-container {
+    max-width: 1000px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 2;
+}
+
+.accordion-item-zenith {
+    background: rgba(255, 255, 255, 0.02);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(200, 169, 126, 0.1);
+    border-radius: 20px;
+    margin-bottom: 25px;
+    overflow: hidden;
+    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.accordion-item-zenith:hover {
+    background: rgba(255, 255, 255, 0.04);
+    border-color: rgba(200, 169, 126, 0.4);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+}
+
+.accordion-item-zenith.active {
+    background: rgba(255, 255, 255, 0.03);
+    border-color: rgba(200, 169, 126, 0.5);
+}
+
+.accordion-header-zenith {
+    padding: 30px 40px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    user-select: none;
+}
+
+.accordion-header-zenith .title-wrap {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+}
+
+.accordion-header-zenith .icon-box {
+    width: 60px;
+    height: 60px;
+    background: rgba(200, 169, 126, 0.1);
+    border-radius: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #C8A97E;
+    font-size: 24px;
+    transition: all 0.4s ease;
+}
+
+.accordion-item-zenith.active .icon-box {
+    background: #C8A97E;
+    color: #fff;
+    box-shadow: 0 0 20px rgba(200, 169, 126, 0.4);
+}
+
+.accordion-header-zenith h3 {
+    margin: 0;
+    font-size: 22px;
+    font-weight: 300;
+    color: #fff;
+    font-family: 'Montserrat', sans-serif;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+.accordion-header-zenith .arrow {
+    font-size: 16px;
+    color: rgba(200, 169, 126, 0.5);
+    transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.accordion-item-zenith.active .arrow {
+    transform: rotate(180deg);
+    color: #C8A97E;
+}
+
+.accordion-content-zenith {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.accordion-item-zenith.active .accordion-content-zenith {
+    max-height: 1000px;
+}
+
+.content-inner {
+    padding: 0 40px 40px 125px;
+}
+
+.content-inner p {
+    color: rgba(255, 255, 255, 0.7);
+    line-height: 1.9;
+    margin-bottom: 35px;
+    font-size: 17px;
+    font-weight: 300;
+}
+
+.knowledge-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 25px;
+}
+
+.knowledge-card {
+    background: rgba(255, 255, 255, 0.02);
+    padding: 30px;
+    border-radius: 16px;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    transition: all 0.4s ease;
+}
+
+.knowledge-card:hover {
+    background: rgba(200, 169, 126, 0.08);
+    border-color: rgba(200, 169, 126, 0.3);
+    transform: translateY(-5px);
+}
+
+.knowledge-card h4 {
+    color: #C8A97E;
+    font-size: 15px;
+    margin-bottom: 15px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+}
+
+.knowledge-card p {
+    font-size: 14px;
+    margin: 0;
+    color: rgba(255, 255, 255, 0.5);
+}
+
+@media (max-width: 991px) {
+    .content-inner {
+        padding: 0 30px 30px 30px;
+    }
+}
+
+@media (max-width: 768px) {
+    .accordion-header-zenith {
+        padding: 25px;
+    }
+    .accordion-header-zenith h3 {
+        font-size: 18px;
+    }
+    .accordion-header-zenith .icon-box {
+        width: 50px;
+        height: 50px;
+        font-size: 20px;
+    }
+}

@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Kiến thức phong thủy kiến trúc từ Zenith House">
+
+    <!-- Site Title -->
+    <title>Zenith House - Kiến Thức Phong Thủy</title>
+
+    <!-- Place favicon.ico in the root directory -->
+    <link rel="shortcut icon" type="image/x-icon" href="assets/img/favicon.png">
+
+    <!-- CSS here -->
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/fontawesome.min.css">
+    <link rel="stylesheet" href="assets/css/venobox.min.css">
+    <link rel="stylesheet" href="assets/css/odometer.min.css">
+    <link rel="stylesheet" href="assets/css/nice-select.css">
+    <link rel="stylesheet" href="assets/css/carouselTicker.css">
+    <link rel="stylesheet" href="assets/css/animation.css">
+    <link rel="stylesheet" href="assets/css/swiper.min.css">
+    <link rel="stylesheet" href="assets/css/main.css">
+    <link rel="stylesheet" href="assets/css/header-compact.css">
+    <link rel="stylesheet" href="assets/css/nav-dropdown.css">
+    <link rel="stylesheet" href="assets/css/sidebar-premium.css">
+    <link rel="stylesheet" href="assets/css/blog-fix.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --gold: #C8A97E;
+            --dark: #0a0a0a;
+            --glass: rgba(255, 255, 255, 0.03);
+            --border: rgba(200, 169, 126, 0.15);
+        }
+
+        body { background: var(--dark); color: #fff; font-family: 'Montserrat', sans-serif; }
+
+        .knowledge-hero { 
+            min-height: 80vh; 
+            display: flex; 
+            align-items: center; 
+            position: relative; 
+            overflow: hidden; 
+            background-attachment: fixed;
+            background-size: cover;
+            background-position: center;
+        }
+        .knowledge-hero::before { 
+            content: ''; 
+            position: absolute; 
+            top: 0; left: 0; width: 100%; height: 100%; 
+            background: linear-gradient(180deg, rgba(10,10,10,0.5) 0%, rgba(10,10,10,0.8) 100%); 
+            z-index: 1; 
+        }
+        .hero-content { position: relative; z-index: 2; text-align: center; }
+        .hero-label { color: var(--gold); letter-spacing: 10px; text-transform: uppercase; font-size: 14px; margin-bottom: 30px; display: block; font-weight: 600; text-shadow: 0 2px 10px rgba(0,0,0,0.5); width: 100%; text-align: center; }
+        .hero-title { font-size: clamp(40px, 8vw, 100px); font-weight: 200; letter-spacing: 15px; margin-bottom: 30px; text-shadow: 0 10px 30px rgba(0,0,0,0.8); line-height: 1.2; color: #fff; }
+        .hero-title span { color: var(--gold); font-weight: 800; }
+
+        .category-section { padding: 60px 0; position: relative; z-index: 2; margin-top: -100px; }
+        .category-card {
+            background: rgba(15, 15, 15, 0.6);
+            border: 1px solid var(--border);
+            padding: 50px 40px;
+            border-radius: 30px;
+            height: 100%;
+            transition: 0.5s;
+            backdrop-filter: blur(20px);
+        }
+        .category-card:hover { transform: translateY(-15px); border-color: var(--gold); background: rgba(200, 169, 126, 0.1); }
+        .category-card .icon { font-size: 45px; color: var(--gold); margin-bottom: 30px; }
+        .category-card h3 { font-size: 26px; font-weight: 400; margin-bottom: 20px; letter-spacing: 1px; color: #fff; }
+        .category-card p { color: rgba(255,255,255,0.85); line-height: 1.8; font-size: 15px; font-weight: 400; }
+
+        .insight-section { padding: 40px 0; background: #050505; }
+        .insight-box { display: flex; background: var(--glass); border: 1px solid var(--border); border-radius: 40px; overflow: hidden; backdrop-filter: blur(20px); }
+        .insight-img { flex: 1; min-height: 500px; background-size: cover; background-position: center; }
+        .insight-content { flex: 1; padding: 80px; display: flex; flex-direction: column; justify-content: center; background: rgba(0,0,0,0.3); }
+        .insight-tag { color: var(--gold); font-size: 12px; letter-spacing: 5px; margin-bottom: 20px; text-transform: uppercase; font-weight: 600; }
+        .insight-title { font-size: 40px; font-weight: 300; margin-bottom: 30px; color: #fff; }
+        .insight-desc { color: rgba(255,255,255,0.9); line-height: 2; margin-bottom: 40px; font-size: 16px; }
+
+        .process-section { padding: 60px 0; }
+        .process-step { position: relative; padding-left: 50px; margin-bottom: 60px; border-left: 1px solid var(--border); }
+        .process-step::before { content: ''; position: absolute; left: -6px; top: 0; width: 11px; height: 11px; background: var(--gold); border-radius: 50%; box-shadow: 0 0 15px var(--gold); }
+        .step-num { color: var(--gold); font-size: 14px; font-weight: 700; margin-bottom: 10px; display: block; }
+        .step-title { font-weight: 500; font-size: 22px; margin-bottom: 15px; color: #fff; }
+        .step-content { color: rgba(255,255,255,0.9); line-height: 1.8; font-size: 15px; }
+
+        .handbook-cta { background: linear-gradient(45deg, #111, #0a0a0a); padding: 60px 80px; border-radius: 40px; border: 1px solid var(--border); text-align: center; margin-top: 40px; }
+        .handbook-cta h3 { font-weight: 300; color: #fff; }
+        .handbook-cta p { color: rgba(255,255,255,0.85); }
+        .section-heading { text-align: center; width: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center; margin-bottom: 30px; }
+    </style>
+</head>
+
+<body>
+    <header class="header sticky-active">
+        <div class="primary-header">
+            <div class="container">
+                <div class="primary-header-inner">
+                    <div class="header-left-wrap">
+                        <div class="header-logo d-lg-block">
+                            <a href="index.html"><img src="assets/img/logo/zenith-logo.png" alt="logo"></a>
+                        </div>
+                        <div class="header-menu-wrap">
+                            <div class="mobile-menu-items">
+                                <ul>
+                                    <li class="has-submenu">
+                                        <a href="index.html">Trang Chủ <i class="fa-solid fa-chevron-down"></i></a>
+                                        <ul class="submenu">
+                                            <li><a href="about.html">Về chúng tôi</a></li>
+                                            <li><a href="contact.html">Liên hệ</a></li>
+                                        </ul>
+                                    </li>
+                                    <li class="has-submenu">
+                                        <a href="service.html">Dịch Vụ <i class="fa-solid fa-chevron-down"></i></a>
+                                        <ul class="submenu">
+                                            <li><a href="thiet-ke-kien-truc.html">Thiết kế kiến trúc</a></li>
+                                            <li><a href="thiet-ke-noi-that.html">Thiết kế & Thi công nội thất</a></li>
+                                            <li><a href="thi-cong-phan-tho.html">Thi công phần thô</a></li>
+                                            <li><a href="xay-nha-tron-goi.html">Xây nhà trọn gói</a></li>
+                                        </ul>
+                                    </li>
+                                    <li class="has-submenu">
+                                        <a href="portfolio.html">Dự Án <i class="fa-solid fa-chevron-down"></i></a>
+                                        <ul class="submenu">
+                                            <li><a href="nha-pho.html">Nhà Phố</a></li>
+                                            <li><a href="biet-thu.html">Biệt Thự</a></li>
+                                            <li><a href="can-ho.html">Căn Hộ</a></li>
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        <a href="pricing.html">Báo Giá</a>
+                                    </li>
+                                    <li class="has-submenu active">
+                                        <a href="cam-nang.html">Cẩm Nang <i class="fa-solid fa-chevron-down"></i></a>
+                                        <ul class="submenu">
+                                            <li><a href="kien-thuc-xay-nha.html">Kiến Thức Xây Nhà</a></li>
+                                            <li><a href="kien-thuc-phong-thuy.html">Kiến Thức Phong Thủy</a></li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="header-right-wrap">
+                        <a href="tel:0123456789" class="header-contact">
+                            <span class="icon"><i class="fa-regular fa-phone"></i></span>
+                            <span class="content"><span class="call-text">Hotline liên hệ</span><span class="call-number">0123 456 789</span></span>
+                        </a>
+                        <div class="header-btn-wrap"><a href="contact.html" class="tl-primary-btn header-btn">Nhận Tư Vấn</a></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div id="zenith-smooth-wrapper">
+        <div id="zenith-smooth-content">
+            <section class="knowledge-hero" style="background-image: url('assets/img/handbook/feng-shui-hero.png');">
+                <div class="container hero-content">
+                    <span class="hero-label">Hài hòa không gian sống</span>
+                    <h1 class="hero-title">PHONG <span>THỦY</span></h1>
+                    <div style="width: 40px; height: 1px; background: var(--gold); margin: 0 auto; opacity: 0.5;"></div>
+                </div>
+            </section>
+
+            <section class="category-section">
+                <div class="container">
+                    <div class="row gy-5">
+                        <div class="col-lg-4 col-md-6">
+                            <div class="category-card">
+                                <div class="icon"><i class="fa-solid fa-yin-yang"></i></div>
+                                <h3>Ngũ hành tương sinh</h3>
+                                <p>Ứng dụng màu sắc và vật liệu theo bản mệnh, tạo nên dòng chảy năng lượng tích cực cho từng phòng chức năng.</p>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-6">
+                            <div class="category-card">
+                                <div class="icon"><i class="fa-solid fa-door-open"></i></div>
+                                <h3>Hướng cửa & Cổng</h3>
+                                <p>Cách xác định vị trí đại môn và các cửa phụ để đón cát khí, mang lại tài lộc và sự bình an cho gia chủ.</p>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-6">
+                            <div class="category-card">
+                                <div class="icon"><i class="fa-solid fa-leaf"></i></div>
+                                <h3>Sân vườn & Cây xanh</h3>
+                                <p>Bố trí tiểu cảnh nước, hòn non bộ và các loại cây mang tính phong thủy để cân bằng sinh khí cho ngôi nhà.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="insight-section">
+                <div class="container">
+                    <div class="insight-box">
+                        <div class="insight-img" style="background-image: url('assets/img/handbook/feng-shui-zen.png');"></div>
+                        <div class="insight-content">
+                            <span class="insight-tag">Zenith Wisdom</span>
+                            <h2 class="insight-title">Phong thủy là khoa học của sự sắp đặt</h2>
+                            <p class="insight-desc">Không cần những vật phẩm cầu kỳ, phong thủy tại Zenith House tập trung vào sự lưu thông của ánh sáng, không khí và sự hợp lý trong giao thông nội bộ. Đó chính là chìa khóa của sức khỏe và hưng thịnh.</p>
+                            <a href="#" class="tl-primary-btn" style="align-self: flex-start;">Tìm hiểu thêm</a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="process-section" style="background: #080808; color: #fff;">
+                <div class="container">
+                    <div class="section-heading text-center mb-80">
+                        <span class="hero-label" style="text-align: center;">The Balance</span>
+                        <h2 style="font-size: 45px; font-weight: 600; letter-spacing: 5px; text-align: center; color: #fff;">NGUYÊN TẮC CỐT LÕI</h2>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-3 col-md-6">
+                            <div class="process-step">
+                                <span class="step-num">RULE 01</span>
+                                <h4 class="step-title">Tàng phong tụ khí</h4>
+                                <p class="step-content" style="color: rgba(255,255,255,0.7);">Tránh gió lùa trực diện, giữ lại khí tốt trong không gian sống.</p>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-md-6">
+                            <div class="process-step">
+                                <span class="step-num">RULE 02</span>
+                                <h4 class="step-title">Minh đường sáng sủa</h4>
+                                <p class="step-content" style="color: rgba(255,255,255,0.7);">Khoảng không trước nhà cần thoáng đãng để đón sinh khí.</p>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-md-6">
+                            <div class="process-step">
+                                <span class="step-num">RULE 03</span>
+                                <h4 class="step-title">Thủy hỏa bất tương dung</h4>
+                                <p class="step-content" style="color: rgba(255,255,255,0.7);">Bố trí bếp và khu vệ sinh hợp lý, tránh xung khắc năng lượng.</p>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-md-6">
+                            <div class="process-step">
+                                <span class="step-num">RULE 04</span>
+                                <h4 class="step-title">Cân bằng âm dương</h4>
+                                <p class="step-content" style="color: rgba(255,255,255,0.7);">Sử dụng ánh sáng và vật liệu đối lập một cách hài hòa.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="handbook-cta">
+                        <h3 style="font-size: 32px; font-weight: 200; margin-bottom: 20px;">Tư vấn phong thủy cùng chuyên gia?</h3>
+                        <p style="color: rgba(255,255,255,0.5); margin-bottom: 40px;">Hãy để chúng tôi giúp bạn tối ưu hóa không gian sống theo cung mệnh riêng biệt.</p>
+                        <a href="contact.html" class="tl-primary-btn">Liên hệ tư vấn</a>
+                    </div>
+                </div>
+            </section>
+
+            <section class="fengshui-rooms-section pt-60 pb-60" style="background: #0a0a0a; color: #fff;">
+                <div class="container">
+                    <div class="section-heading text-center mb-80">
+                        <span class="hero-label" style="text-align: center;">Ứng dụng thực tế</span>
+                        <h2 style="font-size: 45px; font-weight: 600; letter-spacing: 5px; text-align: center; color: #fff;">PHONG THỦY TỪNG KHÔNG GIAN</h2>
+                    </div>
+                    <div class="row gy-4">
+                        <div class="col-lg-4">
+                            <div class="room-card">
+                                <div class="room-img" style="background-image: url('assets/img/handbook/room-bedroom.png');"></div>
+                                <div class="room-content">
+                                    <h4>Phòng Ngủ (Tĩnh)</h4>
+                                    <p>Tránh đặt gương đối diện giường ngủ, ưu tiên ánh sáng dịu nhẹ để bảo toàn năng lượng phục hồi.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4">
+                            <div class="room-card">
+                                <div class="room-img" style="background-image: url('assets/img/handbook/room-kitchen.png');"></div>
+                                <div class="room-content">
+                                    <h4>Phòng Bếp (Hỏa)</h4>
+                                    <p>Vị trí bếp cần "tọa hung hướng cát", tránh đặt cạnh bồn rửa để tránh xung khắc Thủy - Hỏa.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4">
+                            <div class="room-card">
+                                <div class="room-img" style="background-image: url('assets/img/handbook/room-living.png');"></div>
+                                <div class="room-content">
+                                    <h4>Phòng Khách (Dương)</h4>
+                                    <p>Nên là không gian rộng rãi nhất, đủ ánh sáng tự nhiên để đón sinh khí vào toàn bộ ngôi nhà.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <style>
+                .room-card {
+                    background: var(--glass);
+                    border: 1px solid var(--border);
+                    border-radius: 30px;
+                    overflow: hidden;
+                    height: 100%;
+                    transition: 0.5s;
+                }
+                .room-card:hover { border-color: var(--gold); transform: scale(1.02); }
+                .room-img { height: 250px; background-size: cover; background-position: center; }
+                .room-content { padding: 30px; }
+                .room-content h4 { font-size: 20px; font-weight: 400; color: var(--gold); margin-bottom: 15px; }
+                .room-content p { font-size: 14px; color: rgba(255,255,255,0.82); line-height: 1.65; margin-bottom: 0; }
+            </style>
+
+            <section class="philosophy-section pb-60">
+                <div class="container">
+                    <div class="philosophy-box" style="background: linear-gradient(135deg, rgba(200,169,126,0.1) 0%, transparent 100%); padding: 80px; border-radius: 40px; border: 1px solid var(--border); text-align: center;">
+                        <h2 style="font-size: 36px; font-weight: 600; margin-bottom: 30px;">TRIẾT LÝ ZENITH HOUSE</h2>
+                        <p style="font-size: 17px; color: rgba(255,255,255,0.88); line-height: 2; max-width: 800px; margin: 0 auto;">"Chúng tôi không xem phong thủy là sự mê tín, mà là sự thấu hiểu về dòng chảy của tự nhiên (Gió và Nước). Mỗi thiết kế của Zenith đều được tính toán để đạt đến sự cân bằng hoàn hảo giữa Thẩm mỹ hiện đại và Cát khí truyền thống."</p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="fengshui-articles-section pb-60">
+                <div class="container">
+                    <div class="section-heading text-center mb-80">
+                        <span class="hero-label" style="text-align: center;">Chuyên gia chia sẻ</span>
+                        <h2 style="font-size: 45px; font-weight: 600; letter-spacing: 5px; color: #fff; text-align: center;">KHO TÀNG KIẾN THỨC</h2>
+                    </div>
+                    <div class="row gy-5">
+                        <div class="col-lg-4 col-md-6">
+                            <div class="blog-card-premium">
+                                <div class="blog-thumb">
+                                    <img src="assets/img/handbook/feng-shui-compass.png" alt="La bàn" style="width: 100%; height: 100%; object-fit: cover;">
+                                </div>
+                                <div class="blog-info">
+                                    <span class="date">12 Tháng 5, 2025</span>
+                                    <h4><a href="#">Cách xem hướng nhà bằng La Bàn chuẩn xác</a></h4>
+                                    <p>Hướng dẫn chi tiết cách sử dụng La Kinh (La Bàn phong thủy) để xác định tọa hướng và các cung vị trong nhà.</p>
+                                    <a href="#" class="read-more">Xem chi tiết <i class="fa-solid fa-arrow-right-long"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-6">
+                            <div class="blog-card-premium">
+                                <div class="blog-thumb">
+                                    <img src="assets/img/handbook/feng-shui-zen.png" alt="Màu sắc" style="width: 100%; height: 100%; object-fit: cover;">
+                                </div>
+                                <div class="blog-info">
+                                    <span class="date">10 Tháng 5, 2025</span>
+                                    <h4><a href="#">Màu sắc hợp mệnh trong nội thất 2025</a></h4>
+                                    <p>Khám phá bảng màu tương sinh tương hợp cho 5 bản mệnh, mang lại sự cân bằng và may mắn cho gia chủ.</p>
+                                    <a href="#" class="read-more">Xem chi tiết <i class="fa-solid fa-arrow-right-long"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-6">
+                            <div class="blog-card-premium">
+                                <div class="blog-thumb">
+                                    <img src="assets/img/handbook/feng-shui-zen.png" alt="Hóa giải" style="width: 100%; height: 100%; object-fit: cover;">
+                                </div>
+                                <div class="blog-info">
+                                    <span class="date">08 Tháng 5, 2025</span>
+                                    <h4><a href="#">Phong thủy nhà phố: Hóa giải thế sát</a></h4>
+                                    <p>Các giải pháp kiến trúc thông minh để xử lý những vị trí không tốt như đường đâm, đối diện cột điện, ngã ba.</p>
+                                    <a href="#" class="read-more">Xem chi tiết <i class="fa-solid fa-arrow-right-long"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <style>
+                .blog-card-premium {
+                    background: var(--glass);
+                    border: 1px solid var(--border);
+                    border-radius: 25px;
+                    overflow: hidden;
+                    transition: 0.5s;
+                }
+                .blog-card-premium:hover { border-color: var(--gold); }
+                .blog-thumb { height: 230px; background-size: cover; background-position: center; transition: 0.5s; }
+                .blog-card-premium:hover .blog-thumb { transform: scale(1.1); }
+                .blog-info { padding: 30px; }
+                .blog-info .date { color: var(--gold); font-size: 12px; margin-bottom: 15px; display: block; opacity: 0.7; }
+                .blog-info h4 { font-size: 20px; font-weight: 300; margin-bottom: 15px; line-height: 1.4; }
+                .blog-info h4 a { color: #fff; transition: 0.3s; }
+                .blog-info h4 a:hover { color: var(--gold); }
+                .blog-info p { font-size: 14px; color: rgba(255,255,255,0.82); line-height: 1.65; margin-bottom: 25px; }
+                .read-more { color: var(--gold); font-size: 13px; font-weight: 600; text-transform: uppercase; letter-spacing: 1px; display: inline-flex; align-items: center; gap: 10px; }
+                .read-more i { transition: 0.3s; }
+                .read-more:hover i { transform: translateX(5px); }
+            </style>
+
+            <footer class="footer-section overflow-hidden">
+                <div class="footer-bg"
+                    data-background="https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?q=80&w=2000&auto=format&fit=crop">
+                </div>
+                <div class="footer-shade"></div>
+                <div class="container container-2">
+                    <div class="row footer-wrap">
+                        <div class="col-lg-3 col-md-6">
+                            <div class="footer-widget">
+                                <div class="widget-header">
+                                    <div class="footer-logo">
+                                        <a href="index.html"><img src="assets/img/logo/zenith-logo.png" alt="logo"></a>
+                                    </div>
+                                </div>
+                                <p class="mb-10">Chúng tôi biến tầm nhìn của bạn thành những <br> không gian được chế
+                                    tác tinh xảo.</p>
+                                <p class="mb-0">123 Đường Kiến Trúc, Quận 1, <br> TP. Hồ Chí Minh, Việt Nam</p>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-md-6">
+                            <div class="footer-widget footer-col-2">
+                                <ul class="footer-list">
+                                    <li><a href="about.html">Về chúng tôi</a></li>
+                                    <li><a href="service.html">Dịch vụ</a></li>
+                                    <li><a href="contact.html">Tuyển dụng</a></li>
+                                    <li><a href="team.html">Đội ngũ</a></li>
+                                    <li><a href="cam-nang.html">Cẩm Nang</a></li>
+                                    <li><a href="pricing.html">Báo Giá</a></li>
+                                    <li><a href="contact.html">Liên hệ</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-md-6">
+                            <div class="footer-widget footer-col-2 pl-0">
+                                <ul class="footer-list">
+                                    <li><a href="javascript:void(0);">Dự án của chúng tôi</a></li>
+                                    <li><a href="contact.html">Đối tác</a></li>
+                                    <li><a href="contact.html">Chương trình đối tác</a></li>
+                                    <li><a href="contact.html">Chương trình liên kết</a></li>
+                                    <li><a href="contact.html">Điều khoản & Điều kiện</a></li>
+                                    <li><a href="contact.html">Trung tâm hỗ trợ</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-md-6">
+                            <div class="footer-widget">
+                                <div class="footer-address">
+                                    <a class="number" href="tel:0123456789">0123 456 789</a>
+                                    <a class="mail" href="mailto:info@zenithhouse.vn">info@zenithhouse.vn</a>
+                                    <ul class="social-list">
+                                        <li><a href="javascript:void(0);">Facebook</a></li>
+                                        <li><a href="javascript:void(0);">Instagram</a></li>
+                                        <li><a href="javascript:void(0);">YouTube</a></li>
+                                        <li><a href="javascript:void(0);">Twitter</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="copyright-area">
+                    <div class="container">
+                        <div class="copyright-content">
+                            <p>© 2025 Zenith House. Đã đăng ký bản quyền.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="footer-text"><span>Zenith House</span></div>
+            </footer>
+        </div>
+    </div>
+
+    <div id="scroll-percentage"><span id="scroll-percentage-value"></span></div>
+
+    <script src="assets/js/vendor/jquary-3.7.1.min.js"></script>
+    <script src="assets/js/vendor/bootstrap-bundle.js"></script>
+    <script src="assets/js/vendor/imagesloaded-pkgd.js"></script>
+    <script src="assets/js/vendor/waypoints.min.js"></script>
+    <script src="assets/js/vendor/venobox.min.js"></script>
+    <script src="assets/js/vendor/odometer.min.js"></script>
+    <script src="assets/js/vendor/meanmenu.js"></script>
+    <script src="assets/js/vendor/jquery.isotope.js"></script>
+    <script src="assets/js/vendor/swiper.min.js"></script>
+    <script src="assets/js/vendor/split-type.min.js"></script>
+    <script src="assets/js/vendor/gsap.min.js"></script>
+    <script src="assets/js/vendor/scroll-trigger.min.js"></script>
+    <script src="assets/js/vendor/scroll-smoother.js"></script>
+    <script src="assets/js/vendor/jquery.carouselTicker.js"></script>
+    <script src="assets/js/vendor/nice-select.js"></script>
+    <script src="assets/js/main.js"></script>
+</body>
+</html>

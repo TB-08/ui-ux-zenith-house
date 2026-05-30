@@ -1,0 +1,165 @@
+/* Navigation Dropdown Styles - Premium Dark Version */
+.header .primary-header-inner .header-menu-wrap .mobile-menu-items ul li {
+    position: relative;
+}
+
+/* Ensure the parent link shows the arrow and has proper spacing */
+.header .primary-header-inner .header-menu-wrap .mobile-menu-items ul li.has-submenu > a {
+    display: flex !important;
+    align-items: center !important;
+    gap: 8px !important;
+}
+
+.header .primary-header-inner .header-menu-wrap .mobile-menu-items ul li.has-submenu > a i {
+    font-size: 10px !important;
+    transition: transform 0.3s ease !important;
+}
+
+.header .primary-header-inner .header-menu-wrap .mobile-menu-items ul li.has-submenu:hover > a i {
+    transform: rotate(180deg) !important;
+}
+
+/* Override main.css white background and transformation */
+.header .primary-header-inner .header-menu-wrap .mobile-menu-items ul li ul.submenu {
+    background-color: #000000 !important;
+    background: #000000 !important;
+    position: absolute !important;
+    top: 100% !important;
+    left: 50% !important;
+    transform: translateX(-50%) translateY(20px) !important;
+    min-width: 280px !important;
+    padding: 10px 0 !important;
+    list-style: none !important;
+    opacity: 0 !important;
+    visibility: hidden !important;
+    transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1) !important;
+    z-index: 1000 !important;
+    border: 1px solid rgba(200, 169, 126, 0.3) !important;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.8) !important;
+    border-radius: 12px !important; /* Premium rounded corners */
+    margin-top: 0 !important;
+    display: block !important;
+}
+
+/* Remove main.css rotate3d transformation */
+.header .primary-header-inner .header-menu-wrap .mobile-menu-items ul li:hover > ul.submenu {
+    opacity: 1 !important;
+    visibility: visible !important;
+    transform: translateX(-50%) translateY(0) !important;
+    -webkit-transform: translateX(-50%) translateY(0) !important;
+}
+
+/* Dropdown Arrow */
+.header .primary-header-inner .header-menu-wrap .mobile-menu-items ul li ul.submenu::before {
+    content: '';
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    border-width: 10px;
+    border-style: solid;
+    border-color: transparent transparent #000000 transparent;
+}
+
+/* Bridge for hover persistence */
+.header .primary-header-inner .header-menu-wrap .mobile-menu-items ul li ul.submenu::after {
+    content: '';
+    position: absolute;
+    bottom: 100%;
+    left: 0;
+    width: 100%;
+    height: 30px;
+}
+
+/* Submenu Items Styling */
+.header .primary-header-inner .header-menu-wrap .mobile-menu-items ul li ul.submenu li {
+    display: block !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    border-bottom: none !important;
+    width: 100% !important;
+}
+
+.header .primary-header-inner .header-menu-wrap .mobile-menu-items ul li ul.submenu li:last-child {
+    border-bottom: none !important;
+}
+
+.header .primary-header-inner .header-menu-wrap .mobile-menu-items ul li ul.submenu li a {
+    background-color: transparent !important;
+    background: transparent !important;
+    display: block !important;
+    padding: 15px 25px !important;
+    color: #ffffff !important;
+    font-size: 15px !important;
+    font-weight: 500 !important;
+    text-transform: none !important;
+    text-align: left !important;
+    transition: all 0.3s ease !important;
+    letter-spacing: 0.5px !important;
+    white-space: nowrap !important;
+    margin: 0 !important;
+    height: auto !important;
+    line-height: 1.2 !important;
+}
+
+.header .primary-header-inner .header-menu-wrap .mobile-menu-items ul li ul.submenu li a:hover {
+    color: #C8A97E !important;
+    background: rgba(200, 169, 126, 0.1) !important;
+    padding-left: 32px !important;
+}
+
+/* Clear hover effects from main.css */
+.header .primary-header-inner .header-menu-wrap .mobile-menu-items ul li ul.submenu li a:before {
+    display: none !important;
+}
+
+/* Fix for mobile menu (MeanMenu) */
+@media (max-width: 991px) {
+    .header .primary-header-inner .header-menu-wrap .mobile-menu-items ul li ul.submenu {
+        position: static !important;
+        transform: none !important;
+        opacity: 1 !important;
+        visibility: visible !important;
+        display: none !important;
+        background: transparent !important;
+        border: none !important;
+        box-shadow: none !important;
+        padding-left: 20px !important;
+        margin-top: 0 !important;
+        min-width: auto !important;
+    }
+    
+    .header .primary-header-inner .header-menu-wrap .mobile-menu-items ul li ul.submenu::before, 
+    .header .primary-header-inner .header-menu-wrap .mobile-menu-items ul li ul.submenu::after {
+        display: none !important;
+    }
+    
+    .header .primary-header-inner .header-menu-wrap .mobile-menu-items ul li.has-submenu:hover > ul.submenu {
+        transform: none !important;
+    }
+    
+    .header .primary-header-inner .header-menu-wrap .mobile-menu-items ul li ul.submenu li {
+        border-bottom: none !important;
+    }
+    
+    .header .primary-header-inner .header-menu-wrap .mobile-menu-items ul li ul.submenu li a {
+        padding: 10px 0 !important;
+        font-size: 14px !important;
+        color: #333 !important; /* Mobile menu is usually on light background */
+    }
+    
+    .header .primary-header-inner .header-menu-wrap .mobile-menu-items ul li ul.submenu li a:hover {
+        padding-left: 10px !important;
+    }
+}
+
+/* Syncing menu size and position from index.html */
+.header .primary-header-inner .header-menu-wrap .mobile-menu-items > ul > li > a {
+    padding: 25px 0 !important;
+}
+.header .primary-header-inner .header-logo img {
+    max-width: 170px !important;
+}
+.header-btn {
+    padding: 12px 25px !important;
+}

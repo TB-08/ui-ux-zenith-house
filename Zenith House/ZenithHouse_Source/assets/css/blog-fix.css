@@ -1,0 +1,215 @@
+/* Blog Section - 100vh Premium Layout */
+.blog-section {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    padding: 30px 0; /* Thu hẹp padding */
+    position: relative;
+    background-color: #0c0c0c; /* Dark mode đồng bộ */
+    overflow: hidden;
+}
+
+.blog-section .container {
+    position: relative;
+    z-index: 1;
+}
+
+/* Heading Synchronization - CENTERED */
+.blog-section .section-heading {
+    text-align: center;
+    margin-bottom: 20px; /* Giảm mạnh margin */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.blog-section .sub-heading {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 15px !important;
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 100px;
+    padding: 6px 20px;
+    text-transform: uppercase;
+    font-size: 10px;
+    letter-spacing: 3px;
+    background: rgba(255,255,255,0.03);
+    font-weight: 600;
+    color: rgba(255,255,255,0.6);
+}
+
+.blog-section .sub-heading::before {
+    content: "";
+    width: 6px;
+    height: 6px;
+    background: #C8A97E;
+    border-radius: 50%;
+}
+
+.blog-section .section-title.title-2 {
+    font-size: 36px;
+    font-weight: 200;
+    line-height: 1.1;
+    color: #ffffff; /* Trắng đồng bộ */
+    letter-spacing: -1px;
+    margin-bottom: 0;
+    text-transform: none;
+}
+
+.blog-section .section-title.title-2 span {
+    color: #C8A97E !important;
+    font-size: 44px;
+    font-weight: 800; /* Vàng thì in đậm */
+    display: inline-block;
+    letter-spacing: -1.5px;
+    margin-left: 8px;
+}
+
+/* Post Card Dark Polish */
+.post-card {
+    background: rgba(255,255,255,0.03);
+    border-radius: 24px;
+    overflow: hidden;
+    transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+    border: 1px solid rgba(255,255,255,0.08);
+    margin-bottom: 15px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.post-card:hover {
+    transform: translateY(-10px) scale(1.02);
+    box-shadow: 0 40px 80px rgba(0,0,0,0.5);
+    border-color: rgba(200, 169, 126, 0.5);
+}
+
+.post-thumb {
+    position: relative;
+    overflow: hidden;
+    height: 140px; /* Thu nhỏ ảnh mạnh tay hơn */
+}
+
+.post-thumb img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.8s ease;
+}
+
+.post-card:hover .post-thumb img {
+    transform: scale(1.1);
+}
+
+.post-thumb .category {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    background: rgba(200, 169, 126, 0.9);
+    backdrop-filter: blur(10px);
+    color: white;
+    padding: 4px 15px;
+    border-radius: 50px;
+    font-size: 10px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    z-index: 2;
+}
+
+.post-content {
+    padding: 20px; /* Giảm padding */
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.post-meta {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    list-style: none;
+    padding: 0;
+    margin-bottom: 10px;
+    font-size: 10px;
+    text-transform: uppercase;
+    color: #999;
+    letter-spacing: 0.5px;
+}
+
+.post-meta li span {
+    color: #ffffff; /* Trắng */
+    font-weight: 600;
+}
+
+.post-card .title {
+    font-size: 16px;
+    font-weight: 300; /* Mảnh cho chữ trắng */
+    line-height: 1.4;
+    margin-bottom: 5px;
+    letter-spacing: -0.3px;
+}
+
+.post-card .title a {
+    color: #ffffff;
+    transition: color 0.3s ease;
+}
+
+.post-card .title a:hover {
+    color: #C8A97E;
+}
+
+.post-card p {
+    display: none; /* Ẩn mô tả để chắc chắn nằm gọn trong 1 screen */
+}
+
+/* Centered Button Style */
+.tl-btn-primary {
+    display: inline-flex;
+    align-items: center;
+    gap: 15px;
+    background: #C8A97E; /* Vàng cho button */
+    color: #ffffff !important;
+    padding: 14px 35px;
+    border-radius: 100px;
+    font-size: 11px;
+    font-weight: 800; /* In đậm */
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    text-decoration: none;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+}
+
+.tl-btn-primary i {
+    font-size: 14px;
+    transition: transform 0.4s ease;
+}
+
+.tl-btn-primary:hover {
+    background: #C8A97E;
+    color: white !important;
+    transform: translateY(-5px);
+    box-shadow: 0 20px 40px rgba(200, 169, 126, 0.3);
+}
+
+.tl-btn-primary:hover i {
+    transform: translateX(5px);
+}
+
+.mt-50 { margin-top: 20px; }
+
+@media (max-width: 1400px) {
+    .blog-section .section-title.title-2 { font-size: 62px; }
+    .blog-section .section-title.title-2 span { font-size: 74px; }
+}
+
+@media (max-width: 991px) {
+    .blog-section { height: auto; padding: 100px 0; }
+    .blog-section .section-title.title-2 { font-size: 48px; }
+    .blog-section .section-title.title-2 span { font-size: 56px; }
+    .post-card { margin-bottom: 30px; }
+}

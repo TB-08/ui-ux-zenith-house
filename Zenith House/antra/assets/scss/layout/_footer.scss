@@ -1,0 +1,314 @@
+@use "../utilities" as *;
+
+/**----------------------------------------
+START: Footer CSS
+----------------------------------------*/
+.footer-section {
+    position: relative;
+    z-index: 1;
+    overflow-x: clip;
+    padding-bottom: 395px;
+    @include breakpoint(md){
+        padding-bottom: 250px;
+    }
+    @include breakpoint(sm){
+        padding-bottom: 100px;
+    }
+    .footer-bg{
+        @include background;
+        content: "";
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: -1;
+        &:before{
+            background-color: var(--tl-color-common-black);
+            content: "";
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            opacity: .75;
+        }
+    }
+    .footer-shade{
+        background: rgba(39, 38, 37, 0.64);
+        opacity: 0.3;
+        border: 1px solid rgba(255, 255, 255, 0.07);
+        backdrop-filter: blur(29px);
+        height: 550px;
+        width: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: -1;
+    }
+}
+.footer-wrap{
+    padding: 130px 0 100px 0;
+    @include breakpoint(md){
+        padding: 80px 0 0 0;
+    }
+}
+
+.footer-widget {
+    @include breakpoint(md) {
+        margin-bottom: 80px;
+    }
+    @include breakpoint(sm){
+        margin-bottom: 50px;
+    }
+    .widget-header {
+        margin-bottom: 30px;
+        .footer-logo{
+            max-width: 170px;
+        }
+        .widget-title{
+            color: var(--tl-color-common-white);
+            font-size: 24px;
+            font-weight: 500;
+            position: relative;
+        }
+    }
+    p{
+        color: var(--tl-color-common-white);
+        font-size: 16px;
+    }
+    .footer-list {
+        list-style: none;
+        li {
+            color: #ADADAD;
+            a {
+                font-family: var(--tl-ff-heading);
+                color: var(--tl-color-common-white);
+                font-size: 18px;
+                font-weight: 400;
+                line-height: 1;
+                &:hover {
+                    color: var(--tl-color-theme-primary);
+                }
+            }
+            &:not(:last-of-type) {
+                margin-bottom: 20px;
+            }
+        }
+    }
+    .footer-address{
+        @include breakpoint(md){
+            @include flex-vertical-center;
+            flex-direction: column;
+            align-items: baseline;
+        }
+        .number,
+        .mail{
+            font-family: var(--tl-ff-heading);
+            color: var(--tl-color-common-white);
+            font-size: 30px;
+            font-weight: 400;
+            position: relative;
+            display: inline-block;
+            @include breakpoint(lg){
+                font-size: 20px;
+            }
+            &:before{
+                background-color: var(--tl-color-theme-primary);
+                content: "";
+                width: 0;
+                height: 1px;
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                transition: all 0.3s ease-in-out;
+                cursor: pointer;
+            }
+            &:hover{
+                color: var(--tl-color-theme-primary);
+                &:before{
+                    color: var(--tl-color-theme-primary);
+                    width: 100%;
+                }
+            }
+        }
+    }
+    .social-list {
+        @include flex-vertical-center;
+        list-style: none;
+        margin-top: 100px;
+        flex-wrap: wrap;
+        row-gap: 10px;
+        @include breakpoint(sm){
+            margin-top: 50px;
+        }
+        li {
+            position: relative;
+            line-height: 1;
+            &:not(:last-of-type){
+                margin-right: 13px;
+                padding-right: 13px;
+                &:before{
+                    background-color: var(--tl-color-common-white);
+                    content: "";
+                    width: 5px;
+                    height: 1px;
+                    position: absolute;
+                    top: 50%;
+                    right: 0;
+                    transform: translateY(-50%);
+                }
+            }
+            a {
+                color: var(--tl-color-common-white);
+                font-size: 15px;
+                font-weight: 500;
+                line-height: 1;
+                display: inline-block;
+            }
+            &:not(:last-of-type) {
+                margin-right: 8px;
+            }
+        }
+    }
+    &.footer-col-2{
+        padding-left: 70px;
+        @include breakpoint(md){
+            padding-left: 0;
+        }
+        .footer-list{
+            li{
+                a{
+                    position: relative;
+                    &:before{
+                        background-color: var(--tl-color-theme-primary);
+                        content: "";
+                        width: 0;
+                        height: 1px;
+                        position: absolute;
+                        bottom: 0;
+                        left: 0;
+                        transition: all 0.3s ease-in-out;
+                        cursor: pointer;
+                    }
+                    &:hover{
+                        &:before{
+                            color: var(--tl-color-theme-primary);
+                            width: 100%;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+.footer-text{
+    position: absolute;
+    bottom: -72px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: -1;
+    @include breakpoint(sm){
+        bottom: 0;
+    }
+    span{
+        font-family: var(--tl-ff-heading);
+        font-size: 480px;
+        background: linear-gradient(179.69deg, #FFFAF2 0.27%, rgba(255, 251, 244, 0) 90.85%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        opacity: 0.64;
+        line-height: 1;
+        @include breakpoint(lg){
+            font-size: 400px;
+        }
+        @include breakpoint(md){
+            font-size: 300px;
+        }
+        @include breakpoint(sm){
+            font-size: 80px;
+        }
+    }
+}
+
+.copyright-area{
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 30px 0;
+    @include breakpoint(md){
+        padding: 40px 0
+    }
+}
+
+.copyright-content {
+    text-align: center;
+    align-items: center;
+    @include breakpoint(md) {
+        margin-top: 0;
+    }
+    @include breakpoint(sm) {
+        row-gap: 20px;
+    }
+    p {
+        color: #D0D0D0;
+        font-size: 16px;
+        font-family: var(--tl-ff-body);
+        margin: 0;
+        span {
+            color: var(--tl-color-theme-primary);
+        }
+        @include breakpoint(sm){
+            text-align: center;
+        }
+    }
+    .social-list {
+        @include flex-vertical-center;
+        justify-content: end;
+        list-style: none;
+        @include breakpoint(sm){
+            justify-content: center;
+        }
+        li {
+            a {
+                background-color: var(--tl-color-border-1);
+                color: var(--tl-color-common-white);
+                font-size: 13px;
+                height: 40px;
+                width: 40px;
+                border-radius: 50%;
+                display: block;
+                @include flex-center;
+                &:hover {
+                    background-color: var(--tl-color-theme-primary);
+                    color: var(--tl-color-common-white);
+                }
+            }
+            &:not(:last-of-type) {
+                margin-right: 10px;
+            }
+        }
+    }
+    .copyright-list{
+        list-style: none;
+        @include flex-vertical-center;
+        column-gap: 20px;
+        justify-content: end;
+        @include breakpoint(sm){
+            justify-content: center;
+        }
+        a{
+            font-family: var(--tl-ff-body);
+            color: #D0D0D0;
+            font-size: 16px;
+            font-weight: 400;
+            &:hover{
+                color: var(--tl-color-theme-primary);
+            }
+        }
+    }
+}
+
+
+
+/* !END: Theme Footer CSS */
